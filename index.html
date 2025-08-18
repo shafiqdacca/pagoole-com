@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      	<title>Pagoole</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      	<meta name="description" content="Lost and found anything world wide, it's free to create account.">
+        <meta name="author" content="Shafiqul Islam Tuhin Pagoole" />
+      	<meta name="keywords" content="Pagoole, pagal, pagol, pagla, pagul, lost and found, pagel"/>
+      	<meta name="google-site-verification" content="_xekNgO6QhA6ifkwHhm06uJxykdQK4XPC_F_cKK1yBY" />
+        
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <!-- <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script> -->
+        <!-- Google fonts-->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" /> -->
+        <!-- <link  href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> -->
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.min.css" rel="stylesheet" />
+      	
+      	<!-- <link rel="preload" href="assets/fonts/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin> -->
+      	<!-- <link rel="preload" href="assets/fonts/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2" as="font" type="font/woff2" crossorigin> -->
+      
+	<style>
+		.applist1:hover {
+  			background-color: #ddd;
+		}
+	</style>
+        <script type="text/javascript">
+        	window.addEventListener('offline', function (event) {
+   				console.log('Offline');
+            	alert('Offline');
+       	    });     
+        </script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+				<div class="col-lg-2">
+					<button id="btnlogo" aria-label="Logo" class="navbar-brand btn back-color border-radius-logo applist" onclick="javascript:location.reload(true);"><img src="assets/img/navbar-logo-6kb.png" alt="..." style="height: 32px;" width="32" height="32"  /></button>
+				</div>  
+				<div class="col-lg-8">				
+				<div id="navbar-center">
+					
+						<div id="search-div" class="wrap">
+						   <div class="search">
+							  <input id="myInput" onkeyup="filterList()" title="Type what you lost or found!" type="text" class="searchTerm" placeholder="What are you looking for?">
+							  <button id="btnSearch" onclick="filterList()" type="button" class="searchButton" aria-label="Search">
+								<!-- <i class="fa fa-search"></i> -->
+                                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"/></svg>
+							 </button>
+						   </div>
+						</div>
+				</div>					
+				</div>
+				<div class="col-lg-2">				
+                  <!--<button id="btnlogo" class="nav-link btn back-color float-right dropbtn border-radius-logo" onclick="showApps();"><i class="fas fa-bars"></i><span class="apps">...</span></button>-->
+                  <button id="btnAppsList" aria-label="Applications" class="nav-link btn back-color float-right dropbtn border-radius-logo applist" onclick="showApps();">
+                    <div class="bento-menu">
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+  <div class="bento-dot"></div>
+</div>
+                  </button>
+				</div> 
+				
+            </div>
+        </nav>
+		
+      
+	<!--
+      <div id="allApps" class="dropdown-content apps-margin scroll" >
+			<div class="apps tooltip-cust">
+			<table>
+				<tr>
+					<td>
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams" class="lost-app">
+							<img class="app-wise-logo center" src="./assets/img/pagoole-lost-logo.png">
+							<div class="appname">Lost</div>
+						</a>
+					</td>
+					<td>
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/ituhin2/home" class="index-app">
+							<img class="app-wise-logo center" src="./assets/img/pagoole-index.jpg">
+							<div class="appname">Index</div>
+						</a>  
+					</td>
+					<td>
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/shafiq-test/home" class="test-app">
+							<img class="app-wise-logo center" src="./assets/img/profile-picture.jpg">
+							<div class="appname">Test Application For Oracle Apex Testing.</div>
+						</a>
+					</td>
+					<td>
+				</tr>
+				<tr>
+					<td>
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/ituhin2/home" class="index-app">
+                              <img class="app-wise-logo center" src="./assets/img/pagoole-index.jpg">
+							<div class="appname">LAMS : Lost And Found Asset Management System.</div>
+						</a>
+					</td>
+				</tr>
+			</table>
+			</div>	
+      </div>
+	-->
+      
+      
+      <!-- Application List -->
+      <div id="allApps" class="dropdown-content apps-margin scroll">
+			<div class="apps tooltip-cust">
+		
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams" class="lost-app">
+							<img class="app-wise-logo center" src="./assets/img/pagoole-lost-logo.png">
+							<div class="appname">Lost</div>
+						</a>
+					
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/ituhin2/home" class="index-app">
+							<img class="app-wise-logo center" src="./assets/img/pagoole-index.jpg">
+							<div class="appname">Index</div>
+						</a>  
+					
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/shafiq-test/home" class="test-app">
+							<img class="app-wise-logo center" src="./assets/img/profile-picture.jpg">
+							<div class="appname">Test Application For Oracle Apex Testing.</div>
+						</a>
+										
+						<a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/ituhin2/home" class="index-app">
+                              <img class="app-wise-logo center" src="./assets/images/shafiq_cumilla.jpg">
+							<div class="appname">LAMS : Lost And Found Asset Management System.</div>
+						</a>
+						
+			</div>	
+      </div>
+     <!-- ./Application List -->
+      
+      
+      
+				
+        <!-- Masthead-->
+        <!--<header class="masthead">-->
+		<br/><br/><br/><br/>
+			<div class="container">	
+				<div class="col-lg-12">
+					<h5>Are you lost or found anything?</h5>
+					<div id="searchMatched" href="#"></div>
+					<p>You can make your own post if you lost or found something. Example: </p>
+					<ul id="result">
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost a Mobile Phone.</a><p>I lost my mobile phone...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My younger brother is missing from last day.</a><p>My brother went to schoole but not return to home from school...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I have found a money bag from the street.</a><p>I found a money bag while I was travelling by bus...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The baby girl is found on the street.</a><p>The small baby was crying on the road...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost my motorcycle.</a><p>My motorcycle has been stolen from my home...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The man is wanted.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My child is missing.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The man died in road accident.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My girlfriend is missing.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to sell this mobile / car / cat.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to buy a pc.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My mom need a car.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I am feeling loonly.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost my pasport / books / bank check.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">A man is looking for his home.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to rent a car / bus / jeep / truck.</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to buy land</a><p>Details...</p><br/></li>
+						<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost or found a Phone / Camera / Wallet / Keys / Purse / Backpack / Clothing / Glasses / Headphones / Vape / E-cig / ID / License</a><p>I lost when i was going to...</p><br/></li>
+					</ul>
+				</div>				
+					
+			</div>	
+        <!-- </header>-->
+        <!-- Services-->
+        
+        <!-- Portfolio Grid-->
+        
+        <!-- About-->
+        
+        <!-- Team-->
+        
+        <!-- Clients-->
+        
+        <!-- Contact-->
+
+        <!-- Footer-->
+        <footer class="footer py-4 bg-light">
+            <div class="container">		
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Pagoole &commat;2021-2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0"><div id="google_translate_element"></div></div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="./privacy.html">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="./privacy.html">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        
+        <!-- Portfolio item 2 modal popup-->
+        
+        <!-- Portfolio item 3 modal popup-->
+        
+        <!-- Portfolio item 4 modal popup-->
+        
+        <!-- Portfolio item 5 modal popup-->
+        
+        <!-- Portfolio item 6 modal popup-->
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+      	<!-- Jquery-->
+      	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+      
+		<script type="text/javascript">
+          var x = document.getElementById("allApps");
+			function showApps() {
+				//document.getElementById("allApps").classList.toggle("show");                      	
+  					if (x.style.display === "none" || !x.style.display) {
+    					x.style.display = "block";
+  					} else {
+   						 x.style.display = "none";
+  					}
+              	return 0;
+			}
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+             /* if (!document.getElementById('allApps').contains(event.target) && !event.target.matches('.btn-apps-list') && !event.target.matches('.bento-menu') && !event.target.matches('.bento-dot')) {*/
+              if (!document.getElementById('allApps').contains(event.target) && !document.getElementById('btnAppsList').contains(event.target)){
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				  var openDropdown = dropdowns[i];
+				  //console.log(x);
+				  if (openDropdown.style.display === "block" && openDropdown.style.display){
+					openDropdown.style.display = "none";
+				  }
+                  //if (x.style.display === "block" && !event.target.parentElement.className === "bento-menu" && !event.target.parentElement.className === "bento-dot") {
+    				//	x.style.display = "none";
+  					//} 
+				  /*if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+                    //document.getElementById("allApps").classList.toggle("show");
+				  }*/
+				}
+			  } 
+			}
+			
+			function filterList() {
+				var input, filter, ul, li, a, i, txtValue;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				ol = document.getElementById("result");
+				li = ol.getElementsByTagName("li");
+				for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					txtValue = a.textContent || a.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "block"; 
+						document.getElementById("searchMatched").innerHTML="<strong>Search Result : </strong>"+li[i].innerHTML;
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+          
+        
+
+		  function setButton() {
+  				//document.getElementById('btnAppsList').style.height = document.getElementById('btnlogo').offsetHeight+'px';
+            console.log("pagoole");
+		  }
+          
+	      
+          
+          window.addEventListener('online', function (event) {
+   			 console.log('Internet Connection Restored');
+          });
+          
+		</script>
+
+		
+    </body>
+</html>
