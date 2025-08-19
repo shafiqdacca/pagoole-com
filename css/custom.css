@@ -32,6 +32,10 @@ body {
     display: none;
 }
 
+#allApps {
+  transition: margin-top 0.3s ease-in-out;
+}
+
 /* Tab buttons */
 .tab {
     overflow: hidden;
