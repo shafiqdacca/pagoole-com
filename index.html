@@ -6,15 +6,15 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="Lost and found anything world wide, it's free to create account.">
-	<meta name="author" content="Shafiqul Islam Tuhin Pagoole" />
-	<meta name="keywords" content="Pagoole, pagal, pagol, pagla, pagul, lost and found, pagel" />
+	<meta name="author" content="Pagoole" />
+	<meta name="keywords" content="Pagoole bd, pagal bd, pagol bd, pagla bd, pagul bd, lost and found bd, pagel db" />
 	<meta name="google-site-verification" content="_xekNgO6QhA6ifkwHhm06uJxykdQK4XPC_F_cKK1yBY" />
 
 	<!-- Favicon-->
 	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
 	<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="css/styles.min.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
 	<link href="css/custom.css" rel="stylesheet" />
 
 	<script type="text/javascript">
@@ -40,9 +40,9 @@
 				<div id="navbar-center">
 					<div id="search-div" class="wrap">
 						<div class="search">
-							<input id="searchBox" onkeyup="filterList()" title="Type what you lost or found!" type="text"
-								class="searchTerm" placeholder="What are you looking for?">
-								
+							<input id="searchBox" onkeyup="filterList()" title="Type what you lost or found!"
+								type="text" class="searchTerm" placeholder="What are you looking for?">
+
 							<button id="btnSearch" onclick="filterList()" type="button" class="searchButton"
 								aria-label="Search">
 								<!-- <i class="fa fa-search"></i> -->
@@ -51,11 +51,11 @@
 										d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z" />
 								</svg>
 							</button>
-							
+
 						</div>
-						
+
 					</div>
-					
+
 				</div>
 				<div id="searchSuggestions"></div>
 			</div>
@@ -103,6 +103,11 @@
 			<a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="index-app">
 				<img class="app-wise-logo center" src="./assets/images/shafiq_cumilla.jpg">
 				<div class="appname">LAMS : Lost And Found Asset Management System.</div>
+			</a>
+
+			<a href="dynamic-report-project.html" class="report-app">
+				<img class="app-wise-logo center" src="./assets/images/logo-pagoole-report-project.png">
+				<div class="appname">Pagoole Dynamic Report Project</div>
 			</a>
 
 		</div>
@@ -496,7 +501,7 @@
 					if (openDropdown.style.display === "block" && openDropdown.style.display) {
 						openDropdown.style.display = "none";
 						arrow.style.display = "none";
-					}					
+					}
 				}
 			}
 		}
@@ -519,14 +524,10 @@
 			}
 		}
 
-
-
 		function setButton() {
 			//document.getElementById('btnAppsList').style.height = document.getElementById('btnlogo').offsetHeight+'px';
 			console.log("pagoole");
 		}
-
-
 
 		window.addEventListener('online', function (event) {
 			console.log('Internet Connection Restored');

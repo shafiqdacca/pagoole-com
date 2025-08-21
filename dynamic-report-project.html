@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic Report Project — Oracle APEX 24.x</title>
+  <meta name="description"
+    content="Dynamic Report Project — A colorful single page software project website developed in Oracle APEX 24.x. Database and language agnostic, runs with JasperReports, Oracle Reports, BI Publisher, Crystal Reports, and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #1e293b;
+      --muted: #475569;
+      --brand: #2563eb;
+      --brand-light: #60a5fa;
+      --accent: #f59e0b;
+      --green: #16a34a;
+      --pink: #db2777;
+      --purple: #7c3aed;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    header.hero {
+      padding: 80px 24px;
+      text-align: center;
+      background: linear-gradient(90deg, #a8fa60, #34d399, #fbbf24, #f472b6);
+      color: #0f172a
+    }
+
+    header.hero h1 {
+      font-size: 48px;
+      margin: 0
+    }
+
+    header.hero p {
+      font-size: 18px;
+      max-width: 70ch;
+      margin: 16px auto;
+    }
+
+    /*nav{position:sticky; top:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:12px 24px; z-index:1000}
+    nav ul{list-style:none; display:flex; gap:24px; justify-content:center; margin:0; padding:0}
+    nav a{text-decoration:none; font-weight:600; color:var(--ink)}
+    nav a:hover{color:var(--brand)}*/
+    section {
+      padding: 60px 24px
+    }
+
+    .container {
+      max-width: 1100px;
+      margin-inline: auto
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      text-align: center;
+      color: var(--brand)
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px
+    }
+
+    .grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(2, 1fr)
+    }
+
+    @media(max-width:960px) {
+
+      .grid.cols-3,
+      .grid.cols-2 {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .05)
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent)
+    }
+
+    .footer {
+      background: #9bb3cc;
+      padding: 24px;
+      text-align: center;
+      margin-top: 60px
+    }
+
+    .features-list li {
+      margin: 6px 0
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      color: white;
+      padding: 50px 24px;
+      text-align: center;
+      border-radius: 12px
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 12px
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 12px;
+      background: white;
+      color: var(--brand);
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #4facfe, #04aa1d);
+      height: 65px;
+      /* Standard navbar height */
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #ffffff;
+      /* Your green color */
+      font-size: 24px;
+      /* Default for large screens */
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    /* For mobile devices */
+    @media (max-width: 768px) {
+      nav .logo a {
+        font-size: 14px;
+        /* Smaller font for tablets & phones */
+      }
+    }
+
+    /* Optional: even smaller for very small screens */
+    @media (max-width: 480px) {
+      nav .logo a {
+        font-size: 12px;
+      }
+    }
+
+
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 25px;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    /*nav ul li:nth-child(1) a { color: #FF0000; } /* Overview */
+    /*nav ul li:nth-child(2) a { color: #FF7F00; } /* Features */
+    /*nav ul li:nth-child(3) a { color: #FFFF00; } /* Architecture */
+    /*nav ul li:nth-child(4) a { color: #00FF00; } /* Integration */
+    /*nav ul li:nth-child(5) a { color: #0000FF; } /* Security */
+    /*nav ul li:nth-child(6) a { color: #8B00FF; } /* Contact */
+
+    /* Keep hover effect */
+    nav ul li a:hover {
+      color: #ffeb3b;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <!-- Company Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="./assets/images/logo-pagoole-report-project.png" alt="Company Logo" />
+        <span class="pagoole"></span>
+      </a>
+    </div>
+
+
+    <!-- Menu Items with Icons -->
+    <ul>
+      <li><a href="#overview"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
+      <li><a href="#features"><i class="fa-solid fa-star"></i> Features</a></li>
+      <li><a href="#architecture"><i class="fa-solid fa-diagram-project"></i> Architecture</a></li>
+      <li><a href="#integration"><i class="fa-solid fa-link"></i> Integration</a></li>
+      <li><a href="#security"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1><!-- HTML -->
+      <span class="pagoole"></span> Dynamic Report Project
+    </h1>
+    <p>A colorful, vendor‑neutral, database‑agnostic reporting solution designed and developed by <a
+        href="https://www.pagoole.com" target="_blank">Pagoole</a> using Advance <a href="https://www.oracle.com"
+        target="_blank">Oracle</a> Dynamic PL/SQL, <a href="https://www.plpdf.com" target="_blank">The PL/PDF</a> and <a
+        href="https://apex.oracle.com/" target="_blank">Oracle APEX 24.x</a> Define once, run anywhere — with
+      JasperReports, Oracle BI Publisher, Crystal Reports, and more.</p>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="container">
+        <h2>Project Overview</h2>
+        <p>The Dynamic Report Project allows organizations to create metadata‑driven reports that are reusable across
+          multiple databases, programming languages, and rendering engines. It separates the <strong>definition</strong>
+          of a report from its <strong>execution</strong> and <strong>rendering</strong>, making it flexible and
+          future‑proof.</p>
+        <p>
+          The Dynamic Report Project is designed for organizations such as software firms and groups of companies that
+          manage
+          multiple concerns and departments and need consolidated reporting. It enables the creation of metadata-driven
+          reports
+          that are reusable across various databases, programming languages, and rendering engines. By separating the
+          <strong>definition</strong> of a report from its <strong>execution</strong> and <strong>rendering</strong>,
+          the project ensures flexibility, scalability, and long-term adaptability to evolving business and technology
+          needs.
+        </p>
+        <p style="
+    font-size: 1.2em; 
+    line-height: 1.8; 
+    color: #333; 
+    text-align: center;
+    background: linear-gradient(90deg, #aafcb8, #f0cbe1, rgb(210, 210, 247)); 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+">
+          With this <span style="background-color: yellow; padding: 2px 6px; border-radius: 4px;">application</span>,
+          you can create new
+          <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span> with just a few
+          <span style="font-weight: bold; color: #03a9f4;">setup data entries</span>, without writing a single line of
+          <span style="font-weight: bold; font-style: italic; color: #9c27b0;">backend code</span>. It’s fast, simple,
+          and designed to get your <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span>
+          ready in few minutes.
+        </p>
+
+      </div>
+    </section>
+
+    <section id="overview" style="background:#d8e4f0">
+      <div class="container">
+        <h2>Who Needs This Dynamic Report Project?</h2>
+        <ul>
+          <li><strong>Software Firms:</strong> To deliver flexible reporting solutions for clients.</li>
+          <li><strong>Group of Companies:</strong> Managing multiple concerns and departments that require consolidated
+            reports for decision making.</li>
+          <li><strong>Enterprises:</strong> Needing customized reports across HR, Finance, Sales, and Operations.</li>
+          <li><strong>Financial Institutions:</strong> For regulatory, compliance, and audit-ready reporting.</li>
+          <li><strong>Educational Institutions:</strong> To generate student, academic, and administrative reports
+            dynamically.</li>
+          <li><strong>Healthcare Organizations:</strong> For patient records, billing, and compliance reporting.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section id="features" style="background:#f9fafb">
+      <div class="container">
+        <h2>Key Features</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Database Agnostic</h3>
+            <p>Works with Oracle, PostgreSQL, MySQL, SQL Server, and more.</p>
+          </div>
+          <div class="card">
+            <h3>Language Neutral</h3>
+            <p>Integrates with Java, .NET, Python, Node.js, or any stack.</p>
+          </div>
+          <div class="card">
+            <h3>Flexible Engines</h3>
+            <p>Render with JasperReports, Oracle Reports, BI Publisher, Crystal Reports.</p>
+          </div>
+          <div class="card">
+            <h3>Visual Designer</h3>
+            <p>Report definitions via APEX 24.x forms and wizards.</p>
+          </div>
+          <div class="card">
+            <h3>Scheduling</h3>
+            <p>Schedule reports with email/SFTP delivery.</p>
+          </div>
+          <div class="card">
+            <h3>Export Options</h3>
+            <p><b>PDF</b>, Excel, Word, HTML, JSON supported.</p>
+          </div>
+          <div class="card">
+            <h3>Governance</h3>
+            <p>Audit trail, approvals, and version management.</p>
+          </div>
+          <div class="card">
+            <h3>Security</h3>
+            <p>Role‑based access, row‑level security, and masking.</p>
+          </div>
+          <div class="card">
+            <h3>Extensible</h3>
+            <p>Pluggable architecture with adapters for future engines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="container">
+        <h2>Architecture</h2>
+        <!--<div class="card">
+          <pre><code>+----------------------+   +-------------------+   +-------------------+
+|  APEX 24.x Metadata | → | Execution Adapters| → | Rendering Engines |
+| (Reports, Params)   |   | (Oracle, Postgres)|   | (Jasper, BI, Crystal etc.)|
++----------------------+   +-------------------+   +-------------------+</code></pre>
+        </div>-->
+        <div class="card">
+          <table style="border-collapse: collapse; text-align: center;">
+            <tr>
+              <td style="border: none; padding: 10px;">
+                +----------------------+
+              </td>
+              <td style="border: none;"></td>
+              <td style="border: none; padding: 10px;">
+                +-------------------+
+              </td>
+              <td style="border: none;"></td>
+              <td style="border: none; padding: 10px;">
+                +-------------------+
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #000; padding: 10px;">
+                <strong>APEX 24.x Metadata</strong><br>(Reports, Params)
+              </td>
+              <td style="border: none;">→</td>
+              <td style="border: 1px solid #000; padding: 10px;">
+                <strong>Execution Adapters</strong><br>(Oracle, Postgres)
+              </td>
+              <td style="border: none;">→</td>
+              <td style="border: 1px solid #000; padding: 10px;">
+                <strong>Rendering Engines</strong><br>(Jasper, BI, Crystal etc.)
+              </td>
+            </tr>
+            <tr>
+              <td style="border: none; padding: 10px;">
+                +----------------------+
+              </td>
+              <td style="border: none;"></td>
+              <td style="border: none; padding: 10px;">
+                +-------------------+
+              </td>
+              <td style="border: none;"></td>
+              <td style="border: none; padding: 10px;">
+                +-------------------+
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="integration" style="background:#f9fafb">
+      <div class="container">
+        <h2>Integration</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>JSON Metadata Example</h3>
+            <pre>{
+  "reportCode": "SALES_SUMMARY",
+  "datasource": "POSTGRESQL",
+  "parameters": [
+    {"name":"from_date","type":"date"},
+    {"name":"to_date","type":"date"}
+  ],
+  "defaultRenderer": "jasper"
+}</pre>
+          </div>
+          <div class="card">
+            <h3>Java SDK Example</h3>
+            <pre>ReportClient client = new ReportClient("https://api.example.com");
+client.export("SALES_SUMMARY")
+      .param("from_date","2025-08-01")
+      .param("to_date","2025-08-31")
+      .toPDF("sales.pdf");</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security">
+      <div class="container">
+        <h2>Security & Governance</h2>
+        <ul class="features-list">
+          <li>Role‑based access control</li>
+          <li>Row‑level security enforcement</li>
+          <li>Audit logging and approval workflow</li>
+          <li>Sensitive data masking and obfuscation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <h2>Get Started with Dynamic Report Project</h2>
+      <p>Install the APEX app, configure your data sources, and start building reports today.</p>
+      <a class="btn" href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/login">Request a Demo</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="integration" style="background:#f9fafb">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p style="font-size: 1.1em; margin-bottom: 40px;">Have questions or want to work together? Reach out!</p>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Get in Touch</h3>
+            <p><strong>Email:</strong> <a href="mailto:shafiq.i2000@gmail.com">shafiq.i2000@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+8801912962094">+88 01912 962094</a></p>
+            <p><strong>Office:</strong> 16th New Arambarg, Rose Vila, Motijheel, Dhaka - 1000</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shafiqbd/"
+                target="_blank">linkedin.com/in/shafiqbd</a></p>
+            <p><strong>Facebook:</strong> <a href="https://web.facebook.com/ituhin2"
+                target="_blank">facebook.com/ituhin2</a></p>
+
+          </div>
+          <div class="card">
+            <h3>Contact Us</h3>
+            <!-- Contact Form -->
+            <div style="flex: 1 1 300px; text-align: left;">
+              <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" name="name" placeholder="Your Name" required
+                  style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="email" name="email" placeholder="Your Email" required
+                  style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;">
+                <textarea name="message" rows="5" placeholder="Your Message" required
+                  style="padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <button type="submit"
+                  style="padding: 12px; font-size: 1em; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Send
+                  Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--<footer class="footer">
+    <p>© 2025 Dynamic Report Project · Built with Oracle APEX 24.x · Compatible with JasperReports, Oracle Reports/BI
+      Publisher, Crystal Reports, and more.</p>
+  </footer>-->
+
+  <footer class="footer py-4 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 text-lg-start">Copyright &copy; Pagoole &commat;2021-2025</div>
+        <div class="col-lg-4 my-3 my-lg-0">
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="link-dark text-decoration-none me-3" href="./privacy.html">Privacy Policy</a>
+          <a class="link-dark text-decoration-none" href="./privacy.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/pagoole.js"></script>
+</body>
+
+</html>

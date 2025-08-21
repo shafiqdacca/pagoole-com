@@ -147,3 +147,16 @@ body {
 }
 
 /* ./searchSuggestions */
+
+
+/* Footer */
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper > .footer {
+  margin-top: auto; /* pushes footer to the bottom */
+}
+/* ./Footer */
