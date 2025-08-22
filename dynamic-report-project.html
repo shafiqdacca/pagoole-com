@@ -4,12 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dynamic Report Project — Oracle APEX 24.x</title>
+  <title>Pagoole Dynamic Report Project</title>
   <meta name="description"
     content="Dynamic Report Project — A colorful single page software project website developed in Oracle APEX 24.x. Database and language agnostic, runs with JasperReports, Oracle Reports, BI Publisher, Crystal Reports, and more." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/header-footer-report-project.css">
 
   <style>
     :root {
@@ -108,13 +109,6 @@
       color: var(--accent)
     }
 
-    .footer {
-      background: #9bb3cc;
-      padding: 24px;
-      text-align: center;
-      margin-top: 60px
-    }
-
     .features-list li {
       margin: 6px 0
     }
@@ -189,13 +183,6 @@
       }
     }
 
-    /* Optional: even smaller for very small screens */
-    @media (max-width: 480px) {
-      nav .logo a {
-        font-size: 12px;
-      }
-    }
-
 
 
     nav ul {
@@ -203,7 +190,6 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      gap: 25px;
     }
 
     nav ul li {
@@ -222,42 +208,83 @@
       transition: color 0.3s, transform 0.2s;
     }
 
-    /*nav ul li:nth-child(1) a { color: #FF0000; } /* Overview */
-    /*nav ul li:nth-child(2) a { color: #FF7F00; } /* Features */
-    /*nav ul li:nth-child(3) a { color: #FFFF00; } /* Architecture */
-    /*nav ul li:nth-child(4) a { color: #00FF00; } /* Integration */
-    /*nav ul li:nth-child(5) a { color: #0000FF; } /* Security */
-    /*nav ul li:nth-child(6) a { color: #8B00FF; } /* Contact */
-
     /* Keep hover effect */
     nav ul li a:hover {
       color: #ffeb3b;
       transform: translateY(-2px);
     }
+
+    nav ul.menu-active {
+      right: 0;
+    }
+
+    nav .toggle {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      z-index: 9999;
+    }
+
+    @media (max-width: 768px) {
+      nav .toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: #fff;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+        padding: 2rem;
+        transition: 0.3s;
+      }
+
+      nav ul a {
+        color: #038323;
+      }
+
+      nav ul.menu-active {
+        right: 0;
+      }
+
+      .logo-text {
+        font-size: unset;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div id="home"></div>
   <nav>
     <!-- Company Logo -->
-    <div class="logo">
+    <div class="logo" >
       <a href="index.html">
-        <img src="./assets/images/logo-pagoole-report-project.png" alt="Company Logo" />
+        <img src="./assets/images/logo-pagoole-report-project.png" alt="RP : Report Project Logo" />
         <span class="pagoole"></span>
       </a>
     </div>
 
 
     <!-- Menu Items with Icons -->
-    <ul>
-      <li><a href="#overview"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
-      <li><a href="#features"><i class="fa-solid fa-star"></i> Features</a></li>
-      <li><a href="#architecture"><i class="fa-solid fa-diagram-project"></i> Architecture</a></li>
-      <li><a href="#integration"><i class="fa-solid fa-link"></i> Integration</a></li>
-      <li><a href="#security"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
-      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <div class="toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+    <ul id="pagoole-menu">
+      <li><a href="#home"><i class="fa-solid fa-home" style="color: rgb(0, 255, 42);"></i> Home</a></li>
+      <li><a href="#overview"><i class="fa-solid fa-circle-info" style="color: blue;"></i> Overview</a></li>
+      <li><a href="#features"><i class="fa-solid fa-star" style="color: #e67e22;"></i> Features</a></li>
+      <li><a href="#architecture"><i class="fa-solid fa-diagram-project" style="color: #2ecc71;"></i> Architecture</a>
+      </li>
+      <li><a href="#integration"><i class="fa-solid fa-link" style="color: #9b59b6;"></i> Integration</a></li>
+      <li><a href="#security"><i class="fa-solid fa-shield-halved" style="color: #e74c3c;"></i> Security</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope" style="color: #eeff05;"></i> Contact</a></li>
     </ul>
   </nav>
+  
 
   <header class="hero">
     <h1><!-- HTML -->
@@ -517,7 +544,7 @@ client.export("SALES_SUMMARY")
   <!--<footer class="footer">
     <p>© 2025 Dynamic Report Project · Built with Oracle APEX 24.x · Compatible with JasperReports, Oracle Reports/BI
       Publisher, Crystal Reports, and more.</p>
-  </footer>-->
+  </footer>
 
   <footer class="footer py-4 bg-light">
     <div class="container">
@@ -531,8 +558,9 @@ client.export("SALES_SUMMARY")
         </div>
       </div>
     </div>
-  </footer>
-  <script src="js/pagoole.js"></script>
+  </footer>-->
+  <div id="footer"></div>
+  <script src="js/header-footer-report-project.js"></script>
 </body>
 
 </html>

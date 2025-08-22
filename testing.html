@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagoole</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Banner Section */
+    #banner {
+      position: relative;
+      width: 100%;
+      height: 400px; /* Banner height */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: url('your-image.jpg') repeat-x; /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      animation: slideBg 30s linear infinite;
+    }
+
+    /* Banner Content */
+    .banner-content h1 {
+      font-size: 3em;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .banner-content p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Background Animation */
+    @keyframes slideBg {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 2000px; } /* Adjust distance/speed */
+    }
+
+    /* Responsive Banner */
+    @media (max-width: 768px) {
+      #banner {
+        height: 300px;
+      }
+      .banner-content h1 {
+        font-size: 2em;
+      }
+      .banner-content p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #banner {
+        height: 200px;
+      }
+      .banner-content h1 {
+        font-size: 1.5em;
+      }
+      .banner-content p {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Navigation Menu Example */
+    nav {
+      width: 100%;
+      background-color: #222;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+      transform: translateY(-2px);
+    }
+
+    /* Multiple colors per nav item */
+    nav ul li:nth-child(1) a { color: #FF0000; }
+    nav ul li:nth-child(2) a { color: #FF7F00; }
+    nav ul li:nth-child(3) a { color: #FFFF00; }
+    nav ul li:nth-child(4) a { color: #00FF00; }
+    nav ul li:nth-child(5) a { color: #0000FF; }
+    nav ul li:nth-child(6) a { color: #8B00FF; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#overview"><i class="fa-solid fa-circle-info"></i> Overview</a></li>
+      <li><a href="#features"><i class="fa-solid fa-star"></i> Features</a></li>
+      <li><a href="#architecture"><i class="fa-solid fa-diagram-project"></i> Architecture</a></li>
+      <li><a href="#integration"><i class="fa-solid fa-link"></i> Integration</a></li>
+      <li><a href="#security"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner -->
+  <section id="banner">
+    <div class="banner-content">
+      <h1>Welcome to Pagoole</h1>
+      <p>Create reports easily with zero backend code!</p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section id="overview" style="padding: 40px 20px; text-align: center; max-width: 900px; margin: 0 auto;">
+    <h2>Overview</h2>
+    <p style="
+      font-size: 1.2em;
+      line-height: 1.8;
+      background: linear-gradient(90deg, #fff9e6, #ffffff);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    ">
+      With this <span style="background-color: #ffe066; padding: 2px 6px; border-radius: 4px;">application</span>, you can create new 
+      <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span> with just a few 
+      <span style="font-weight: bold; color: #03a9f4;">setup data entries</span>, without writing a single line of 
+      <span style="font-weight: bold; font-style: italic; color: #9c27b0;">backend code</span>. It’s fast, simple, 
+      and designed to get your <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span> ready in minutes.
+    </p>
+  </section>
+
+</body>
+</html>
