@@ -11,6 +11,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./css/header-footer-report-project.css">
+  <link rel="stylesheet" href="./css/pagoole.css">
 
   <style>
     :root {
@@ -150,123 +151,7 @@
       text-decoration: none
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(90deg, #4facfe, #04aa1d);
-      height: 65px;
-      /* Standard navbar height */
-      padding: 0 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      margin-right: 8px;
-    }
-
-    nav .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    nav .logo a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #ffffff;
-      /* Your green color */
-      font-size: 24px;
-      /* Default for large screens */
-      font-weight: bold;
-      margin-left: 10px;
-    }
-
-    /* For mobile devices */
-    @media (max-width: 768px) {
-      nav .logo a {
-        font-size: 14px;
-        /* Smaller font for tablets & phones */
-      }
-    }
-
-
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: flex;
-      align-items: center;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s, transform 0.2s;
-    }
-
-    /* Keep hover effect */
-    nav ul li a:hover {
-      color: #ffeb3b;
-      transform: translateY(-2px);
-    }
-
-    nav ul.menu-active {
-      right: 0;
-    }
-
-    nav .toggle {
-      font-size: 1.5rem;
-      cursor: pointer;
-      display: none;
-      z-index: 9999;
-    }
-
-    @media (max-width: 768px) {
-      nav .toggle {
-        display: block;
-      }
-
-      nav ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        background: #fff;
-        flex-direction: column;
-        width: 70%;
-        height: 100%;
-        padding: 2rem;
-        transition: 0.3s;
-      }
-
-      nav ul a {
-        color: #038323;
-      }
-
-      nav ul.menu-active {
-        right: 0;
-      }
-
-      .logo-text {
-        font-size: unset;
-      }
-    }
+    
   </style>
 </head>
 
@@ -277,7 +162,7 @@
     <div class="logo">
       <a href="index.html">
         <img src="./assets/images/logo-pagoole-report-project.png" alt="RP : Report Project Logo" />
-        <span class="pagoole"></span>
+        <span class="pagoole" data-bg="rgba(255, 255, 255, 0.3)"></span>
       </a>
     </div>
 
@@ -289,6 +174,7 @@
     <ul id="pagoole-menu">
       <li><a href="#home"><i class="fa-solid fa-home" style="color: rgb(0, 255, 42);"></i> Home</a></li>
       <li><a href="#overview"><i class="fa-solid fa-circle-info" style="color: blue;"></i> Overview</a></li>
+      <li><a href="#benefits"><i class="fa-solid fa-circle-info" style="color: rgb(0, 247, 255);"></i> Benefits</a></li>
       <li><a href="#features"><i class="fa-solid fa-star" style="color: #e67e22;"></i> Features</a></li>
       <li><a href="#architecture"><i class="fa-solid fa-diagram-project" style="color: #2ecc71;"></i> Architecture</a>
       </li>
@@ -303,10 +189,11 @@
     <h1><!-- HTML -->
       <span class="pagoole"></span> Dynamic Report Project
     </h1>
-    <p>A colorful, vendor‑neutral, database‑agnostic reporting solution designed and developed by <a
-        href="https://www.pagoole.com" target="_blank">Pagoole</a> using Advance <a href="https://www.oracle.com"
-        target="_blank">Oracle</a> Dynamic PL/SQL, <a href="https://www.plpdf.com" target="_blank">The PL/PDF</a> and <a
-        href="https://apex.oracle.com/" target="_blank">Oracle APEX 24.x</a> Define once, run anywhere — with
+    <p>A colorful, vendor‑neutral, database‑agnostic reporting solution designed and developed by <!--<a
+        href="https://www.pagoole.com" target="_blank">Pagoole</a>--> <span class="pagoole"></span> using Advance <a
+        href="https://www.oracle.com" target="_blank">Oracle</a> Dynamic PL/SQL, <a href="https://www.plpdf.com"
+        target="_blank">The PL/PDF</a> and <a href="https://apex.oracle.com/" target="_blank">Oracle APEX 24.x</a>
+      Define once, run anywhere — with
       JasperReports, Oracle BI Publisher, Crystal Reports, and more.</p>
   </header>
 
@@ -328,36 +215,98 @@
           the project ensures flexibility, scalability, and long-term adaptability to evolving business and technology
           needs.
         </p>
-        <p style="
-    font-size: 1.2em; 
-    line-height: 1.8; 
-    color: #333; 
-    text-align: center;
-    background: linear-gradient(90deg, #aafcb8, #f0cbe1, rgb(210, 210, 247)); 
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-family: 'Arial', sans-serif;
-">
+      </div>
+
+    </section>
+
+    <section id="benefits" style="background:#f9fafb">
+      <div class="container">
+        <h2>Why Need This Dynamic Report Project?</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: center; background: linear-gradient(90deg, #aafcb8, #f0cbe1, rgb(210, 210, 247)); 
+    padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-family: 'Arial', sans-serif; ">
           With this <span style="background-color: yellow; padding: 2px 6px; border-radius: 4px;">application</span>,
           you can create new
           <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span> with just a few
           <span style="font-weight: bold; color: #03a9f4;">setup data entries</span>, without writing a single line of
           <span style="font-weight: bold; font-style: italic; color: #9c27b0;">backend code</span>. It’s fast, simple,
           and designed to get your <span style="font-weight: bold; font-style: italic; color: #ff5722;">reports</span>
-          ready in few minutes.
-        </p>
+          ready in few minutes. <br><br>
+          You can integrate this reporting solution with any application and database <span style="font-style: italic;">
+            (Oracle, PostgreSQL, MySQL, SQL Server, and more)</span>
+          and any programming language <span style="font-weight: bold; color: #03a9f4;">(Java, .NET, Python, Node.js, or
+            any stack)</span>.
+          It supports multiple rendering engines
+          <span style="font-weight: bold; color: #ff5722;">(JasperReports, Oracle Reports, BI Publisher, Crystal
+            Reports)</span>
+          and export formats
+          <span style="font-weight: bold; color: #04aa1d;">(PDF, <span
+              style="text-decoration: line-through; color: red;">Excel, Word, HTML, JSON</span>)</span>.
 
+          <br />
+          Managing multiple subsidiary companies often requires dedicated employees for report development, which
+          increases costs. With this application, you can minimize report development costs and manage reporting
+          centrally
+          across all subsidiaries.
+        </p>
+        <!-- Highlighted info block -->
+        <div style="
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 16px;
+        background: linear-gradient(90deg, rgb(255, 248, 150), #aafcb8, #f0cbe1, rgb(210, 210, 247), #03a9f4);
+        border-left: 4px solid #04aa1d;
+        border-radius: 8px;
+        text-align: left;        
+        line-height: 1.6;
+        max-width: 100%;
+    ">
+          <ul
+            style="font-family: Arial, sans-serif; font-size: 1.1em; line-height: 1.8; color: #333; margin: 20px auto; padding: 0 10px; list-style: none;">
+            <li>
+              <strong>🟢 Minimize Report Development Cost:</strong> Up to <span
+                style="color: #04aa1d; font-weight: bold;">80%</span>.
+            </li>
+            <li>
+              <strong>🟢 Maximum Report Coverage:</strong> More than <span
+                style="color: #04aa1d; font-weight: bold;">85%</span> of complex reports can be handled by this
+              solution.
+            </li>
+            <li>
+              <strong>🔵 Reduce Team Effort:</strong> A team of 8-10 members developing reports over six months can be
+              reduced to 2-3 members completing the work within just 1-2 months.
+            </li>
+            <li>
+              <strong>🟡 Faster Report Delivery:</strong> Reports that normally take months can now be ready in weeks,
+              accelerating decision-making.
+            </li>
+            <li>
+              <strong>⚪ Centralized Management:</strong> All reports across multiple subsidiaries can be managed and
+              monitored from a single platform.
+            </li>
+            <li>
+              <strong>🟤 Multi-database Support:</strong> Integrates seamlessly with Oracle, PostgreSQL, MySQL, SQL
+              Server,
+              and more.
+            </li>
+            <li>
+              <strong>🟠 Easy Integration:</strong> This reporting solution is simple to integrate with any project or
+              technology stack.
+            </li>
+          </ul>
+
+        </div>
       </div>
     </section>
 
-    <section id="overview" style="background:#d8e4f0">
+    <section id="overview1" style="background:#d8e4f0">
       <div class="container">
         <h2>Who Needs This Dynamic Report Project?</h2>
         <ul>
           <li><strong>Software Firms:</strong> To deliver flexible reporting solutions for clients.</li>
-          <li><strong>Group of Companies:</strong> Managing multiple concerns and departments that require consolidated
-            reports for decision making.</li>
+          <li><strong>Group of Companies:</strong> Managing multiple subsidiary companies often requires dedicated
+            employees for report development, which increases costs. With this application, you can <strong>minimize
+              report development costs</strong> and <strong>manage reporting centrally</strong> across all subsidiaries.
+          </li>
           <li><strong>Enterprises:</strong> Needing customized reports across HR, Finance, Sales, and Operations.</li>
           <li><strong>Financial Institutions:</strong> For regulatory, compliance, and audit-ready reporting.</li>
           <li><strong>Educational Institutions:</strong> To generate student, academic, and administrative reports
@@ -556,6 +505,7 @@ client.export("SALES_SUMMARY")
 
   <div id="footer"></div>
   <script src="js/header-footer-report-project.js"></script>
+  <script src="js/pagoole.js"></script>
 </body>
 
 </html>

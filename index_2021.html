@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="static/images/favicon/favicon.ico">
+<meta http-equiv="Access-Control-Allow-Origin" content="https://apex.oracle.com/" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+
+body{
+  /*font-family: 'Open Sans', sans-serif;*/
+  background: #fff;
+  margin: 0;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+#top-bar{
+	position: absolute;
+    background-color: gainsboro;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.top-bar-left {
+	padding: 5px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #10c94b;
+  border-right: none;
+  padding: 5px;
+  /*height: 20px;*/
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #10c94b;
+  background: #10c94b;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 40%;
+  min-width : 240px;
+  position: absolute;
+  /*top: 50%;*/
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index:100;
+}
+
+.wrap-middle{
+  top: 40%;
+}
+
+.wrap-top{
+  top: 40px;
+}
+
+.container {
+  position: relative;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  width:auto;
+}
+
+.bottomright {
+	/*position: relative;*/
+    bottom: 8px;
+    width: auto;
+    float: right;
+    /*right: 40px;*/
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.dropbtn {
+  background-color: #10c94b;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  /*position: relative;*/
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #ffffff;
+  overflow: fixed;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0);
+  z-index: 9999;
+  float: right;
+  width : 300px;
+  max-width : 100vw;
+  max-height : 80vh;
+  right: 10px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    background-color: #10c94b;
+    border-radius: 18px;
+	cursor : pointer;
+}
+.apps{
+	border-radius: 10px;
+    background-color: #f49999;
+    width: 100px;
+    height: 100px;
+    margin: 16px;
+}	
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.apps:hover{
+	background-color: paleturquoise;
+}
+.app-name{
+	padding: inherit;
+}
+.top-bar{
+   left: 0;
+   top: 0;
+   width: 100%;
+   position:absolute;
+
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #dadce0;
+   color: white;
+   text-align: center;
+   
+   padding: 15px;
+    border-bottom: 1px solid #dadce0;
+    color: #70757a
+}
+
+.tooltip-cust {
+  position: relative;
+  /*display: inline-block;*/
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: inherit;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.resultlist{
+	position: relative;
+    top: 50px;
+	left: 30%;
+	width: 40%;
+	min-width : 240px;
+	height : auto;
+}
+
+.hdn-0{
+    display: none !important;
+}
+
+* {box-sizing: border-box;}
+
+
+
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 5px 5px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  /*padding: 12px;*/
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  /*font-size: 35px;*/
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+#navbar-center {
+  float: center;
+}
+
+.b-m-120px{
+	margin-bottom: 120px;
+}
+	
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 2px 1px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: right;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <div class="row">
+    <div class="col-md-2">
+		<a href="javascript:location.reload(true);" id="logo"><img class="logo" src="static/images/pagoole.png" /></a>
+    </div>
+    <div id="navbar-center" class="col-md-8">
+		
+    </div>
+    <div class="col-md-2">
+		<div id="navbar-right">
+			<button onclick="myFunction()" class="dropbtn">Apps</button>
+		</div>
+    </div>    
+    
+  </div>
+</div>
+
+	<div id="myDropdown" class="dropdown-content">
+		<div class="apps tooltip-cust">
+		<a  href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">
+			<img class="logo center" src="static/images/pagoole-logo.png" />
+			<div class="app-name">Lost<span class="tooltiptext">Lost and Found Asset Management System.</span></div></a>
+		</div>
+		
+	</div>
+
+<div>
+	<div id="top-bar">
+		<div class="top-bar-left">
+			<a href="https:pagoole.com"><img class="logo" src="static/images/pagoole.png" /></a>
+		</div>
+	</div>
+	<div id="resultdiv" class="resultlist hdn-0 b-m-120px">
+	<h4>Are you lost or are you found anything?</h4>
+	<div id="searchMatched" href="#"></div>
+	<p>Make your own post.</p>
+	
+		<ol id="result">
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost a Mobile Phone.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My younger brother is missing from last day.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I have found a money bag from the street.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The baby girl is found on the street.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost my motorcycle.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The man is wanted.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My child is missing.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">The man died in road accident.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My girlfriend is missing.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to sell this mobile / car / cat.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to buy a pc.</a></li><br/>			
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">My mom need a car.</a></li><br/>			
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I am feeling loonly.</a></li><br/>			
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I lost my pasport / books / bank check.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">A man is looking for his home.</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to rent a car / bus / jeep / truck.</a></li><br/>			
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">I want to buy land</a></li><br/>
+			<li><a href="https://apex.oracle.com/pls/apex/r/shafiqadmin/lams">Phone / Camera / Wallet / Keys / Purse / Backpack / Clothing / Glasses / Headphones / Vape / E-cig / ID / License
+																				</a></li><br/>
+			
+		</ol>
+	</div>
+
+<div class="top-bar">
+
+
+</div>
+
+
+<div id="search-moved">
+<div id="search-div" class="wrap wrap-middle">
+   <div class="search">
+      <input id="myInput" onkeyup="filterList()" title="Type what you lost or found!" type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button id="btnSearch" onclick="searchItems()" type="button"  class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
+</div>
+
+
+<div class="footer">
+	<div class="topleft">
+		<p>Copyright&nbsp;©&nbsp;@2022&nbsp;pagoole.com.&nbsp;All&nbsp;Rights&nbsp;Reserved.</p>
+	</div>
+	<div class="bottomright">
+		<a href="./static/privacy/privacy.html">Privacy&nbsp;Policy</a>
+	</div>
+	<p>Language: <select onchange="langChange(this)" data-placeholder="Choose a Language...">
+  <option value="AF">Afrikaans</option>
+  <option value="SQ">Albanian</option>
+  <option value="AR">Arabic</option>
+  <option value="HY">Armenian</option>
+  <option value="EU">Basque</option>
+  <option value="BN">Bengali</option>
+  <option value="BG">Bulgarian</option>
+  <option value="CA">Catalan</option>
+  <option value="KM">Cambodian</option>
+  <option value="ZH">Chinese (Mandarin)</option>
+  <option value="HR">Croatian</option>
+  <option value="CS">Czech</option>
+  <option value="DA">Danish</option>
+  <option value="NL">Dutch</option>
+  <option value="EN">English</option>
+  <option value="ET">Estonian</option>
+  <option value="FJ">Fiji</option>
+  <option value="FI">Finnish</option>
+  <option value="FR">French</option>
+  <option value="KA">Georgian</option>
+  <option value="DE">German</option>
+  <option value="EL">Greek</option>
+  <option value="GU">Gujarati</option>
+  <option value="HE">Hebrew</option>
+  <option value="HI">Hindi</option>
+  <option value="HU">Hungarian</option>
+  <option value="IS">Icelandic</option>
+  <option value="ID">Indonesian</option>
+  <option value="GA">Irish</option>
+  <option value="IT">Italian</option>
+  <option value="JA">Japanese</option>
+  <option value="JW">Javanese</option>
+  <option value="KO">Korean</option>
+  <option value="LA">Latin</option>
+  <option value="LV">Latvian</option>
+  <option value="LT">Lithuanian</option>
+  <option value="MK">Macedonian</option>
+  <option value="MS">Malay</option>
+  <option value="ML">Malayalam</option>
+  <option value="MT">Maltese</option>
+  <option value="MI">Maori</option>
+  <option value="MR">Marathi</option>
+  <option value="MN">Mongolian</option>
+  <option value="NE">Nepali</option>
+  <option value="NO">Norwegian</option>
+  <option value="FA">Persian</option>
+  <option value="PL">Polish</option>
+  <option value="PT">Portuguese</option>
+  <option value="PA">Punjabi</option>
+  <option value="QU">Quechua</option>
+  <option value="RO">Romanian</option>
+  <option value="RU">Russian</option>
+  <option value="SM">Samoan</option>
+  <option value="SR">Serbian</option>
+  <option value="SK">Slovak</option>
+  <option value="SL">Slovenian</option>
+  <option value="ES">Spanish</option>
+  <option value="SW">Swahili</option>
+  <option value="SV">Swedish </option>
+  <option value="TA">Tamil</option>
+  <option value="TT">Tatar</option>
+  <option value="TE">Telugu</option>
+  <option value="TH">Thai</option>
+  <option value="BO">Tibetan</option>
+  <option value="TO">Tonga</option>
+  <option value="TR">Turkish</option>
+  <option value="UK">Ukrainian</option>
+  <option value="UR">Urdu</option>
+  <option value="UZ">Uzbek</option>
+  <option value="VI">Vietnamese</option>
+  <option value="CY">Welsh</option>
+  <option value="XH">Xhosa</option>
+</select></p>
+</div>
+</div>
+<div id="currentDocument"></div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function langChange(element) {
+  //document.body.setAttribute('lang', element.value);
+  translate(element.value, 'lng-tag');
+  console.log(element.value);
+}
+
+function searchItems(){
+
+	document.getElementById("search-div").classList.remove("wrap-middle");
+	document.getElementById("resultdiv").classList.remove("hdn-0");
+	
+	var searchDiv = document.getElementById("search-moved");
+	var searchText = document.getElementById("myInput").value; 
+
+	if (searchDiv){
+		document.getElementById("navbar-center").innerHTML=searchDiv.innerHTML;
+		document.getElementById("search-moved").remove();
+		document.getElementById("myInput").value = searchText;
+	}
+	
+	//document.getElementById("currentDocument").innerHTML=document;
+	
+	
+	/*
+	var node = document.createElement('li');
+		//node.appendChild(document.createTextNode('Scooter'));
+		const listdiv = document.createElement('div');
+			listdiv.innerHTML(addList());
+		node.appendChild(listdiv);
+		document.getElementById('result').appendChild(node);
+
+
+		// Creating Our XMLHttpRequest object 
+        var xhr = new XMLHttpRequest();
+  
+        // Making our connection  
+        var url = 'https://apex.oracle.com/pls/apex/shafiqadmin/lams/comment/3481';
+        xhr.open("GET", url, true);
+		xhr.withCredentials = true;
+  
+        // function execute after request is successful 
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+            }
+        }
+        // Sending our request 
+        xhr.send(null);
+		*/
+
+		document.getElementById("myInput").focus();
+}
+
+function addList(){
+	var listItem ='        <div class="row">            <div class="col-md-2" style="align-items: center;">                <a href="/pls/apex/r/shafiqadmin/lams/post-details?p115_id=3481&amp;session=11484893150686"><img class="postImage" id="1461" src="https://apex.oracle.com/pls/apex/shafiqadmin/lams/postinfo/1461" alt="Post Title : images"></a>             </div>                        <div class="col-md-10" style="font-size:10px;">                <div class="row">                        <a href="/pls/apex/r/shafiqadmin/lams/post-details?p115_id=3481&amp;session=11484893150686">                                </a><h6><a href="/pls/apex/r/shafiqadmin/lams/post-details?p115_id=3481&amp;session=11484893150686">Post Title :<span></span></a><a href="#" class="t-Button t-Button--icon t-Button--primary t-Button--iconLeft float-right btn-tool" style="height: 28px; visibility: hidden;"><i class="fa fa-edit"></i>Edit</a>                                                                <!-- Example single danger button --><div class="float-right">  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">  </button>  <div class="dropdown-menu">    <a class="dropdown-item" href="#"><i class="fa fa-edit"></i>Edit Post</a>    <div class="dropdown-divider"></div>    <a class="dropdown-item t-Button--danger" href="#"><i class="fa fa-trash"></i>Delete Post</a>    <div class="dropdown-divider"></div>    <a class="dropdown-item" href="#">Separated link</a>  </div></div><!-- /.Example single danger button -->                               </h6>                                                <div class="col-md-3" style="font-style: italic; font-weight: bold;">                        		<h7><i class="fa fa-map-marker"></i>World Wide </h7>                		</div>                        <div class="col-md-3" style="font-style: italic; font-weight: bold;">                                <h7><i class="fa fa-gear fa-spin"></i>All Category</h7>                                                		</div>                        <div class="col-md-2" style="font-style: italic; font-weight: bold;">                        	<h7><i class="fa fa-chain-broken"></i>Lost</h7>                  		</div>                        <div class="col-md-4" style="font-style: italic; font-weight: bold;">                        	<h7><i class="fa fa-refresh fa-spin"></i>Waiting for the owner</h7>                  		</div>                </div>                                                <p class="details3481">                      This my Pic<span id="dots3481">...</span><span class="more" id="more3481"></span>                </p>                            </div>                    </div>                <hr>    </li>';
+	return listItem;
+}
+
+
+
+function redirect(){
+	location.href = 'https://apex.oracle.com/pls/apex/r/shafiqadmin/lams/home?session=:SESSION.';
+}
+
+function filterList() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ol = document.getElementById("result");
+    li = ol.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "block"; 
+			document.getElementById("searchMatched").innerHTML="<strong>Search Result : </strong>"+li[i].innerHTML;
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+function Translate() { 
+	//initialization
+	this.init =  function(attribute, lng){
+		this.attribute = attribute;
+		this.lng = lng;	
+	}
+	//translate 
+	this.process = function(){
+		_self = this;
+		var xrhFile = new XMLHttpRequest();
+		//load content data 
+		xrhFile.open("GET", "lng/"+this.lng+".json", false);
+		xrhFile.onreadystatechange = function ()
+		{
+			if(xrhFile.readyState === 4)
+			{
+				if(xrhFile.status === 200 || xrhFile.status == 0)
+				{
+					var LngObject = JSON.parse(xrhFile.responseText);
+					var allDom = document.getElementsByTagName("*");
+					for(var i =0; i < allDom.length; i++){
+						var elem = allDom[i];
+						var key = elem.getAttribute(_self.attribute);
+						if(key != null) {
+							elem.innerHTML = LngObject[key]  ;
+						}
+					}
+				
+				}
+			}
+		}
+		xrhFile.send();
+    }
+}
+//This function will be called when user click changing language
+function translate(lng, tagAttr){
+    var translate = new Translate();
+    translate.init(tagAttr, lng);
+    translate.process();
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "1px 10px";
+    //document.getElementById("logo").style.fontSize = "15px";
+  } else {
+    document.getElementById("navbar").style.padding = "5px 10px";
+    //document.getElementById("logo").style.fontSize = "25px";
+  }
+}
+	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</body>
+</html>

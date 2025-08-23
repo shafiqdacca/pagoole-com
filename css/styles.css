@@ -12898,12 +12898,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .apps {
   border-radius: 10px;
-  /*background-color: #f49999;*/
-  /*width: 100px;*/
-  /*height: 300px;*/
-  margin: 11px;
+  /* background-color: #f49999; */
+  /* width: 100px; */
+  /* height: 300px; */
+  margin: 12px 6px 12px 12px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .apps a:hover {
@@ -12942,6 +12944,10 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .found-app {
   background-color: #f9d892
+}
+
+.discount-app {
+  background-color: #00ff7b4f;
 }
 
 .test-app {
