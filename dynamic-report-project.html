@@ -6,7 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pagoole Dynamic Report Project</title>
   <meta name="description"
-    content="Dynamic Report Project — A colorful single page software project website developed in Oracle APEX 24.x. Database and language agnostic, runs with JasperReports, Oracle Reports, BI Publisher, Crystal Reports, and more." />
+    content="Dynamic Report Project — Database and language agnostic, runs with JasperReports, Oracle Reports, BI Publisher, Crystal Reports, and more." />
+    <meta property="og:title" content="পাগল || Pagoole Lost and Found anything world wide">
+	<meta property="og:description"
+		content="Pagoole Dynamic Report Project - পাগল - Visit www.pagoole.com for verified and trusted solutions.">
+	<meta property="og:image" content="https://www.pagoole.com/assets/image/og-image-pagoole-dynamic-report-project.webp">
+	<meta property="og:url" content="https://www.pagoole.com/dynamic-report-project.html">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Pagoole">
+    <link rel="canonical" href="https://www.pagoole.com/dynamic-report-project.html" />
+    
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -242,11 +251,10 @@
           <span style="font-weight: bold; color: #04aa1d;">(PDF, <span
               style="text-decoration: line-through; color: red;">Excel, Word, HTML, JSON</span>)</span>.
 
-          <br />
+          <br /><br />
           Managing multiple subsidiary companies often requires dedicated employees for report development, which
           increases costs. With this application, you can minimize report development costs and manage reporting
-          centrally
-          across all subsidiaries.
+          centrally across all subsidiary companies with a single report team.
         </p>
         <!-- Highlighted info block -->
         <div style="
@@ -466,7 +474,7 @@ client.export("SALES_SUMMARY")
     <!-- Contact Section -->
     <section id="integration" style="background:#f9fafb">
       <div class="container">
-        <h2>Contact Me</h2>
+        <h2>Contact Us</h2>
         <p style="font-size: 1.1em; margin-bottom: 40px;">Have questions or want to work together? Reach out!</p>
         <div class="grid cols-2">
           <div class="card">
@@ -506,6 +514,39 @@ client.export("SALES_SUMMARY")
   <div id="footer"></div>
   <script src="js/header-footer-report-project.js"></script>
   <script src="js/pagoole.js"></script>
+  <!-- Import SMTP.js -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    const name = this.name.value;
+    const email = this.email.value;
+    const message = this.message.value;
+
+    Email.send({
+      SecureToken: "YOUR_SMTPJS_SECURE_TOKEN", // get this free from smtpjs.com
+      To: "your_email@example.com",
+      From: email,
+      Subject: "New Contact Form Message from " + name,
+      Body: `
+        <h3>Contact Form Submission</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b><br>${message}</p>
+      `
+    }).then(response => {
+      if (response === "OK") {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      } else {
+        alert("Failed to send: " + response);
+      }
+    });
+  });
+</script>
+
 </body>
 
 </html>

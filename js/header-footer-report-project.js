@@ -56,7 +56,7 @@ if (footer) {
   footer.innerHTML = `
   <footer class="footer">
   <div class="footer-container">
-    <p>&copy; 2025 <a href="https://www.pagoole.com.bd">পাগল বিডি</a> || <a href="https://www.pagoole.com.bd">Pagoole BD</a> All rights reserved.</p>
+    <p>&copy; 2025 <a href="https://www.pagoole.com">পাগল</a> || <a href="https://www.pagoole.com">Pagoole</a> All rights reserved.</p>
     <div class="footer-top">
       <a href="#top" title="Back to Top">
         <i class="fas fa-arrow-up"></i>

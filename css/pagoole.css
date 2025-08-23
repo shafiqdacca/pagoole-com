@@ -87,6 +87,7 @@ nav .toggle {
 
     nav ul.menu-active {
         right: 0;
+        overflow-x: auto;
     }
 
     .logo-text {
