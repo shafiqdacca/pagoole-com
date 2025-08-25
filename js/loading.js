@@ -12,7 +12,7 @@ window.addEventListener('beforeunload', function (event) {
 function addLoading() {
     // Create popup div
     var popupDiv = document.createElement('div');
-    popupDiv.className = 'loading-popup pf w100';
+    popupDiv.className = 'loading-popup pf';
     popupDiv.setAttribute('id', 'loading-popup');
     popupDiv.innerHTML = '<span class="loader"></span>';
     document.body.appendChild(popupDiv);
