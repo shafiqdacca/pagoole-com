@@ -3,6 +3,7 @@ const header = document.getElementById("header");
 if (header) {
   header.innerHTML = `
   <header>
+  <div style="visibility: hidden;" id="top"></div>
     <nav class="container">
    <a href="/">
 <img src="https://pagoole.com/assets/img/navbar-logo-64x64.png" 
@@ -45,7 +46,7 @@ if (header) {
         <li><a href="services.html"><i class="fas fa-cog" style="color: #9b59b6;"></i> Services</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope" style="color: #e74c3c;"></i> Contact</a></li>
       </ul>
-    </nav>
+    </nav>    
   </header>
 `;
 }

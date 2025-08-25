@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/header-footer-report-project.css">
+  <link rel="stylesheet" href="./css/pagoole.css">
   <style>
-    body {
+    .center {
       margin: 0;
-      padding: 0;
+      /*padding: 40px;*/
       background: #f5f7fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      max-height: 100vh;
+      /* Ensure it's always vertically centered */
       text-align: center;
       color: #333;
-    }
-
-    .container {
-      max-width: 600px;
+      align-content: center;
+      flex-direction: column;
     }
 
     .error-code {
@@ -35,13 +38,16 @@
         transform: scale(0.3);
         opacity: 0;
       }
+
       50% {
         transform: scale(1.1);
         opacity: 1;
       }
+
       70% {
         transform: scale(0.95);
       }
+
       100% {
         transform: scale(1);
       }
@@ -70,23 +76,36 @@
 
     .emoji {
       font-size: 4rem;
-      margin-top: 20px;
+      margin-top: 42px;
       animation: float 2s ease-in-out infinite;
     }
 
     @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <div id="header"></div>
+  <div class="center">
     <h1 class="error-code">404</h1>
     <p class="message">Oops! The page you're looking for doesn't exist.</p>
-    <a href="/" class="home-btn">Go to Home</a>
+    <a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="home-btn" target="_self">Go to Home</a>
     <div class="emoji">🔍</div>
   </div>
+  <div id="footer"></div>
+  <script src="js/header-footer-report-project.js"></script>
 </body>
+
 </html>
