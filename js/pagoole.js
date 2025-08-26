@@ -1,8 +1,19 @@
-// The logo text
-const logoText = "Pagoole";
+var logoText = "Pagoole";
 
+// Example Useage:
+// <span class="pagoole" data-bg="rgba(255, 255, 255, 0.3)"></span>
 // Colors for each letter
-const colors = [
+var colors = [
+    'rgb(66, 133, 244)', // P
+    'rgb(234, 67, 53)', // a
+    'rgb(251, 188, 5)', // g
+    '#00FF00', // o
+    'rgb(251, 188, 5)', // o
+    'rgb(234, 67, 53)', // l
+    'rgb(66, 133, 244)'  // e
+];
+// Colors for each letter
+var colors1 = [
     '#FF0000', // P
     '#FF7F00', // a
     '#FFFF00', // g

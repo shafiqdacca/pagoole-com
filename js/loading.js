@@ -10,28 +10,31 @@ window.addEventListener('beforeunload', function (event) {
 });
 
 function addLoading() {
+    // If popup already exists, remove it first
+    var existingPopup = document.getElementById('loading-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+
     // Create popup div
     var popupDiv = document.createElement('div');
-    popupDiv.className = 'loading-popup pf';
     popupDiv.setAttribute('id', 'loading-popup');
+    popupDiv.className = 'loading-popup pf';
     popupDiv.innerHTML = '<span class="loader"></span>';
     document.body.appendChild(popupDiv);
-    //document.body.insertBefore(popupDiv, document.body.firstChild);
 
-    var timerElement = document.createElement('div'); // Create a new <p> element
-    timerElement.id = 'timer'; // Set the id attribute
-    timerElement.textContent = 'Page loading...'; // Set the initial text content
-
+    var timerElement = document.createElement('div');
+    timerElement.id = 'timer';
+    timerElement.textContent = 'Page loading...';
     popupDiv.appendChild(timerElement);
 
-    var startTime = performance.now(); // Get the start time when the page finishes loading
+    var startTime = performance.now();
 
     function updateTimer() {
-        var currentTime = performance.now(); // Get the current time
-        var elapsedTime = (currentTime - startTime) / 1000; // Calculate elapsed time in seconds
-        var countdown = Math.round(elapsedTime); // Calculate countdown remaining
+        var currentTime = performance.now();
+        var elapsedTime = (currentTime - startTime) / 1000;
+        var countdown = Math.round(elapsedTime);
 
-        // Convert seconds to minutes if countdown exceeds 60 seconds
         var displayTime;
         if (countdown >= 60) {
             var minutes = Math.floor(countdown / 60);
@@ -40,20 +43,24 @@ function addLoading() {
         } else {
             displayTime = '00:' + countdown.toString().padStart(2, '0');
         }
-        var dots = '';
-        for (var i = 0; i < countdown % 4; i++) {
-            dots += '.';
-        }
 
-        // Display countdown timer with dots
         timerElement.innerHTML = displayTime;
 
-        // If countdown reaches 0, stop updating the timer
         if (countdown >= 100000) {
             clearInterval(timerInterval);
             popupDiv.remove();
         }
     }
-    // Call updateTimer function every 1000 milliseconds (1 second)
+
     var timerInterval = setInterval(updateTimer, 1000);
+
+    // Remove popup on any click (anywhere in the document)
+    document.addEventListener('click', function removePopupOnClick() {
+        if (popupDiv && popupDiv.parentNode) {
+            popupDiv.remove();
+            clearInterval(timerInterval);
+        }
+        // Unbind this event so it doesn't fire again
+        document.removeEventListener('click', removePopupOnClick);
+    });
 }

@@ -35,9 +35,6 @@ if (header) {
       পাগল বিডি Pagoole BD
   </span>
 </a>
-
-
-
       <div class="toggle">☰</div>
       <ul id="pagoole-menu">
         <li><a href="index.html"><i class="fas fa-home" style="color: blue;"></i> Home</a></li>
@@ -48,37 +45,6 @@ if (header) {
       </ul>
     </nav>    
   </header>
-`;
-}
-
-// Footer
-const footer = document.getElementById("footer");
-if (footer) {
-  footer.innerHTML = `
-  <footer class="footer">
-  <div class="footer-container">
-    <p>&copy; 2025 <a href="https://www.pagoole.com">পাগল</a> || <a href="https://www.pagoole.com">Pagoole</a> All rights reserved.</p>
-    <div class="footer-top">
-      <a href="#top" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-      </a>
-    </div>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/ituhin2" title="Facebook" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://twitter.com/@shafiq_dacca" title="Twitter" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/shafiqbd" title="LinkedIn" target="_blank">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/shafiqdacca" title="GitHub" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>    
-  </div>
-</footer>
 `;
 }
 
