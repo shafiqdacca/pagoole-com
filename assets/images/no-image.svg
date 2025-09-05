@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#f3f4f6"/>
+<rect x="10" y="10" width="780" height="480" rx="16" ry="16" fill="none" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="10 10"/>
+<rect x="240" y="120" width="320" height="220" rx="18" ry="18" fill="#e5e7eb" stroke="#d1d5db" stroke-width="2"/>
+<polygon points="280,300 350,210 420,300" fill="#cbd5e1"/>
+<polygon points="360,300 440,230 520,300" fill="#bfcad8"/>
+<circle cx="470" cy="190" r="18" fill="#94a3b8"/>
+<line x1="260" y1="140" x2="540" y2="320" stroke="#9ca3af" stroke-width="16" stroke-linecap="round" opacity="0.9"/>
+<text x="400" y="390" font-family="sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#6b7280">No Image</text>
+<text x="400" y="420" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#9ca3af">Image not found</text>
+</svg>
