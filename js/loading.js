@@ -1,7 +1,7 @@
 // Add a beforeunload event listener to the window
 window.addEventListener('beforeunload', function (event) {
-    console.log(event);
-    console.log('Executing function before redirect...');
+    //console.log(event);
+    //console.log('Executing function before redirect...');
     if (!navigator.onLine) {
         event.preventDefault();
         console.log("No internet connection. Please check your connection and try again.");
@@ -25,7 +25,7 @@ function addLoading() {
 
     var timerElement = document.createElement('div');
     timerElement.id = 'timer';
-    timerElement.textContent = 'Page loading...';
+    timerElement.textContent = 'Loading...';
     popupDiv.appendChild(timerElement);
 
     var startTime = performance.now();
