@@ -149,7 +149,7 @@ nav .logo a {
   }
 
   nav .logo a {
-    font-size: 24px;
+    font-size: unset;
     /* Smaller font for tablets & phones */
   }
 }

@@ -433,6 +433,31 @@ tr:nth-child(even) {
 
 /* ./display: d */
 
+/* align-items: ai */
+.aic {
+    align-items: center;
+}
+.ais {
+    align-items: start;
+}
+.aie {
+    align-items: end;
+}
+.aib {
+    align-items: baseline;
+}
+.aibf {
+    align-items: first baseline;
+}
+.ailb {
+    align-items: last baseline;
+}
+.aisc {
+    align-items: stretch;
+}
+
+
+
 /* width: 100%: start */
 .w100 {
     width: 100%;

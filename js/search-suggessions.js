@@ -1,3 +1,5 @@
+/* this file does not require css reference file */
+
 const searchBox = document.getElementById("searchBox");
 const searchSuggestions = document.getElementById("searchSuggestions");
 
@@ -26,8 +28,16 @@ function updateSuggestions() {
         div.style.display = "flex";
         div.style.justifyContent = "space-between";
         div.style.alignItems = "center";
-        div.style.padding = "8px";
+        div.style.padding = "3px";
         div.style.cursor = "pointer";
+
+        // Hover effect with JS
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundColor = "#8aee7d54"; // light gray on hover
+        });
+        div.addEventListener("mouseleave", () => {
+            div.style.backgroundColor = "transparent"; // reset
+        });
 
         // Item text container (icon + text)
         const textContainer = document.createElement("span");
@@ -44,6 +54,11 @@ function updateSuggestions() {
         const span = document.createElement("span");
         span.textContent = item;
         span.onclick = () => {
+            searchBox.value = item;
+            searchSuggestions.style.display = "none";
+        };
+
+        div.onclick = () => {
             searchBox.value = item;
             searchSuggestions.style.display = "none";
         };
@@ -94,7 +109,36 @@ function updateSuggestions() {
     footer.className = "footer";
     footer.innerHTML = `<a href="advanced-search.html">Advanced Search</a>`;
     footer.style.flexShrink = "0";
+    footer.style.padding = "8px";
+    footer.style.textAlign = "center";
+    footer.style.borderTop = "1px solid #ddd";
+    footer.style.background = "#fafafa";
+    footer.style.cursor = "pointer";
+
+    // Hover effect with JS
+    footer.addEventListener("mouseenter", () => {
+        footer.style.backgroundColor = "#f0f0f0";  // light gray on hover
+    });
+    footer.addEventListener("mouseleave", () => {
+        footer.style.backgroundColor = "#fafafa";  // reset
+    });
+
+    // Style link inside footer
+    const footerLink = footer.querySelector("a");
+    footerLink.style.textDecoration = "none";
+    footerLink.style.color = "#007BFF"; // blue link
+    footerLink.style.fontWeight = "bold";
+    footerLink.style.transition = "color 0.2s";
+
+    footerLink.addEventListener("mouseenter", () => {
+        footerLink.style.color = "#0056b3"; // darker blue hover
+    });
+    footerLink.addEventListener("mouseleave", () => {
+        footerLink.style.color = "#007BFF";
+    });
+
     searchSuggestions.appendChild(footer);
+
 
     // Main container styles
     searchSuggestions.style.display = "flex";

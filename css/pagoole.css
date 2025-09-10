@@ -3,7 +3,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(90deg, #4facfe, #04aa1d);
-    height: 65px;
+    /*height: 65px;*/
     /* Standard navbar height */
     padding: 0 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -11,12 +11,18 @@ nav {
     top: 0;
     z-index: 1000;
 }
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0 6px;
+    }
+}
 
 nav .logo img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     margin-right: 8px;
+    background-color: #fff;/* #0dcaf0;*/
 }
 
 nav .logo {
