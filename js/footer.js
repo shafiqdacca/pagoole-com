@@ -31,3 +31,5 @@ if (footer) {
 </footer>
 `;
 }
+
+generateLogoTextByClass('pagoole', 'Pagoole');

@@ -17,17 +17,16 @@ nav {
     }
 }
 
+nav .logo {
+    display: flex;
+    align-items: center;
+}
 nav .logo img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     margin-right: 8px;
     background-color: #fff;/* #0dcaf0;*/
-}
-
-nav .logo {
-    display: flex;
-    align-items: center;
 }
 
 nav ul {

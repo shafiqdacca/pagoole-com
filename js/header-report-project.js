@@ -12,25 +12,7 @@ if (header) {
      height="50"
      style="vertical-align: middle;
             border-radius: 50%;
-            background-color: #0000ff5c;">
-  <!--<span style="
-    font-weight: bold;
-    font-size: 1.8rem;
-    background: linear-gradient(
-      90deg,
-      rgb(4, 145, 11),
-      #00ffaa,
-      rgb(255, 0, 0),
-      #8855ff,
-      #ff5599
-    );
-    vertical-align: middle;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-  ">
-    পাগল বিডি Pagoole BD
-  </span>-->
+            background-color: #0000ff5c;">  
   <span class="logo-text">
       পাগল বিডি Pagoole BD
   </span>
