@@ -32,4 +32,6 @@ if (footer) {
 `;
 }
 
-generateLogoTextByClass('pagoole', 'Pagoole');
+if (typeof generateLogoTextByClass === "function") {
+  generateLogoTextByClass('pagoole', 'Pagoole');
+}

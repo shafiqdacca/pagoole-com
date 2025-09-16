@@ -128,4 +128,6 @@ function showApps() {
 	return 0;
 }
 
-generateLogoTextByClass('pagoole', 'Pagoole');
+if (typeof generateLogoTextByClass === "function") {
+  generateLogoTextByClass('pagoole', 'Pagoole');
+}

@@ -55,5 +55,6 @@ function generateLogoTextByClass(className, text) {
 }
 
 // Generate the logo
-generateLogoTextByClass('pagoole', 'Pagoole');
-
+if (typeof generateLogoTextByClass === "function") {
+  generateLogoTextByClass('pagoole', 'Pagoole');
+}
