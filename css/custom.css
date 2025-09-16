@@ -98,7 +98,7 @@ body {
 /* searchSuggestions */
 
 #searchSuggestions {
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     max-height: 400px;
     /* adjust as needed */
     width: 705px;
