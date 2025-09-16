@@ -95,58 +95,7 @@ body {
 
 
 
-/* searchSuggestions */
 
-#searchSuggestions {
-    /*border: 1px solid #ccc;*/
-    max-height: 400px;
-    /* adjust as needed */
-    width: 705px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-#searchSuggestions .suggestions {
-    overflow-y: auto;
-    flex-grow: 1;
-    /* takes available space */
-}
-
-#searchSuggestions .suggestions div {
-    padding: 8px;
-    cursor: pointer;
-}
-
-#searchSuggestions .suggestions div:hover {
-    background: #b7ccb4;
-    border-radius: 32px 32px 32px 32px;
-}
-
-#searchSuggestions .footer {
-    padding: 8px;
-    border-top: 1px solid #ddd;
-    text-align: center;
-    background: #fafafa;
-    border-radius: 0 0 4px 4px;
-    flex-shrink: 0;
-    /* prevent shrinking */
-}
-
-#searchSuggestions .footer a {
-    text-decoration: none;
-    color: #0073e6;
-    font-weight: bold;
-}
-
-#searchSuggestions .footer a:hover {
-    text-decoration: underline;
-}
-
-/* ./searchSuggestions */
 
 
 /* Footer */

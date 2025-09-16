@@ -19,8 +19,9 @@ function initSearchHistory() {
         // Scrollable container for items
         const suggestionsContainer = document.createElement("div");
         suggestionsContainer.className = "suggestions";
-        suggestionsContainer.style.maxHeight = "300px"; // adjust as needed
+        suggestionsContainer.style.maxHeight = "calc(100vh - 90px)"; // adjust as needed
         suggestionsContainer.style.overflowY = "auto";
+        suggestionsContainer.style.flexGrow = "1"; // take available space
 
         // Add search history items
         searchHistory.forEach((item, index) => {
@@ -34,6 +35,7 @@ function initSearchHistory() {
             // Hover effect with JS
             div.addEventListener("mouseenter", () => {
                 div.style.backgroundColor = "#8aee7d54"; // light gray on hover
+                div.style.borderRadius = "32px"; // rounded corners
             });
             div.addEventListener("mouseleave", () => {
                 div.style.backgroundColor = "transparent"; // reset
@@ -114,6 +116,8 @@ function initSearchHistory() {
         footer.style.borderTop = "1px solid #ddd";
         footer.style.background = "#fafafa";
         footer.style.cursor = "pointer";
+        footer.style.borderRadius = "0 0 4px 4px";
+        footer.style.flexShrink = "0";
 
         // Hover effect with JS
         footer.addEventListener("mouseenter", () => {
@@ -132,9 +136,11 @@ function initSearchHistory() {
 
         footerLink.addEventListener("mouseenter", () => {
             footerLink.style.color = "#0056b3"; // darker blue hover
+            footerLink.style.textDecoration = "underline";
         });
         footerLink.addEventListener("mouseleave", () => {
             footerLink.style.color = "#007BFF";
+            footerLink.style.textDecoration = "none";
         });
 
         searchSuggestions.appendChild(footer);
