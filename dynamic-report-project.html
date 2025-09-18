@@ -34,9 +34,6 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./css/header-footer-report-project.css">
-  <link rel="stylesheet" href="./css/footer.css">
-  <link rel="stylesheet" href="./css/pagoole.css">
-  <link href="css/loading.css" rel="stylesheet" />
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
   <style>
@@ -520,12 +517,6 @@ client.export("SALES_SUMMARY")
   </main>
 
   <div id="footer"></div>
-  <script src="js/header-report-project.js"></script>
-  <script src="js/footer.js"></script>
-  <script src="js/pagoole.js"></script>
-  <!-- Import SMTP.js -->
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault(); // Prevent page reload
@@ -555,7 +546,10 @@ client.export("SALES_SUMMARY")
       });
     });
   </script>
-  <script src="js/loading.js"></script>
+  <script src="js/header-report-project.js"></script>
+  <!-- Import SMTP.js -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript" src="global/add-all-global-files.js"></script>
 
 </body>
 
