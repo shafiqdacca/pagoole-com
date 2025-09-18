@@ -10,20 +10,23 @@
   <link rel="stylesheet" href="./css/pagoole.css">
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <style>
-    .center {
+    body {
       margin: 0;
-      /*padding: 40px;*/
+      padding: 0;
       background: #f5f7fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .center {
       display: flex;
       justify-content: center;
       align-items: center;
-      max-height: 100vh;
       /* Ensure it's always vertically centered */
       text-align: center;
       color: #333;
       align-content: center;
       flex-direction: column;
+      min-height: calc(100vh - 100px);
     }
 
     .error-code {
@@ -95,6 +98,14 @@
       }
     }
   </style>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&family=Poppins&display=swap" rel="stylesheet">-->
+
+  <!-- Core theme CSS (includes Bootstrap)-->
+
 </head>
 
 <body>
@@ -106,7 +117,11 @@
     <div class="emoji">🔍</div>
   </div>
   <div id="footer"></div>
-  <script src="js/header-footer-report-project.js"></script>
+  <script type="text/javascript" src="./js/header.js"></script>
+  <!-- Core theme JS-->
+  <script type="text/javascript" src="global/add-all-global-files.js"></script>
+
+
 </body>
 
 </html>
