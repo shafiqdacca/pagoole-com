@@ -4,7 +4,7 @@ const cssBase = "./css";
 // List of JS files (relative paths)
 const scripts = [
     "/js/scripts.js",
-    "/js/search-suggessions.js",
+    //"/js/search-suggessions.js",
     "/js/pagoole.js",
     "/js/loading.js",
     //"/js/header.js",
@@ -44,3 +44,4 @@ function loadCSS(files) {
 // Load them
 loadCSS(cssFiles);
 loadScripts(scripts);
+initSearchHistory();
