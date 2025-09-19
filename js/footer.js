@@ -13,7 +13,7 @@ if (footer) {
       </a>
     </div>
     <div class="footer-social">
-    <a class="" href="./privacy.html">Privacy Policy</a>||<a class="" href="./privacy.html">Terms of Use</a>||&nbsp;
+    <a class="" href="https://www.pagoole.com/privacy.html">Privacy Policy</a>||<a class="" href="https://www.pagoole.com/privacy.html">Terms of Use</a>||&nbsp;
      <a class="social-button" href="https://www.facebook.com/ituhin2" title="Facebook" target="_blank">
         <i class="fab fa-facebook-f"></i>
       </a>

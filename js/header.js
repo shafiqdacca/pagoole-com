@@ -3,12 +3,12 @@ const header = document.getElementById("header");
 if (header) {
 	header.innerHTML = `
   <header id="pagoole-header">
-		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top">
 			<div class="w100p df jic aic">
 				<div class="col-lg-2">
 					<div class="logo">
 						<a href="index.html">
-							<img src="./assets/images/pagoole.png" alt="Pagoole Logo" />
+							<img src="https://www.pagoole.com/assets/images/pagoole.png" alt="Pagoole Logo" />
 							<span class="pagoole" data-bg="rgba(255, 255, 255, 0.3)"></span>
 						</a>
 					</div>
@@ -64,19 +64,19 @@ if (header) {
 			<div class="apps tooltip-cust">
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/discount-shop/login" class="discount-app">
 					<img class="app-wise-logo center" alt="Pagoole Discount Shop"
-						src="./assets/img/pagoole-discount-logo128x128.png">
+						src="https://www.pagoole.com/assets/img/pagoole-discount-logo128x128.png">
 					<div class="appname">Pagole Discount Shop</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/lams/login" class="lost-app">
-					<img class="app-wise-logo center" src="./assets/img/pagoole-lost-logo.png">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/pagoole-lost-logo.png">
 					<div class="appname">Pagoole Lost</div>
 				</a>
 				<a href="dynamic-report-project.html" class="report-app">
-					<img class="app-wise-logo center" src="./assets/images/logo-pagoole-report-project.png">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/logo-pagoole-report-project.png">
 					<div class="appname">Pagoole Dynamic Report Project</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="index-app">
-					<img class="app-wise-logo center" src="./assets/img/pagoole-index.jpg">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/pagoole-index.jpg">
 					<div class="appname">Index</div>
 				</a>
 			</div>
@@ -84,11 +84,11 @@ if (header) {
 			<h6 style="text-align: center; color: #1900d5;">Others Applications</h6>
 			<div class="apps tooltip-cust">
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="found-app">
-					<img class="app-wise-logo center" src="./assets/images/shafiq_cumilla.jpg">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/shafiq_cumilla.jpg">
 					<div class="appname">LAMS : Lost And Found Asset Management System.</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/shafiq-test/home" class="test-app">
-					<img class="app-wise-logo center" src="./assets/img/profile-picture.jpg">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/profile-picture.jpg">
 					<div class="appname">Test Application For Oracle Apex Testing.</div>
 				</a>
 
