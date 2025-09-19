@@ -98,10 +98,10 @@ if (header) {
 `;
 }
 
-initSearchHistory();
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
+	//console.log(event.target);
 	/* if (!document.getElementById('allApps').contains(event.target) && !event.target.matches('.btn-apps-list') && !event.target.matches('.bento-menu') && !event.target.matches('.bento-dot')) {*/
 	if (!document.getElementById('allApps').contains(event.target) && !document.getElementById('btnAppsList').contains(event.target)) {
 		var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -129,5 +129,8 @@ function showApps() {
 }
 
 if (typeof generateLogoTextByClass === "function") {
-  generateLogoTextByClass('pagoole', 'Pagoole');
+	generateLogoTextByClass('pagoole', 'Pagoole');
+}
+if (typeof initSearchHistory === "function") {
+	initSearchHistory();
 }
