@@ -5,7 +5,7 @@ if (header) {
   <header>
     <nav class="container">
    <a href="/">
-<img src="https://pagoole.com/assets/img/navbar-logo-64x64.png" 
+<img src="https://pagoole.com/assets/images/navbar-logo-64x64.png" 
      alt="পাগল বিডি Pagol BD"
      width="50"
      height="50"

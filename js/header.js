@@ -64,11 +64,11 @@ if (header) {
 			<div class="apps tooltip-cust">
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/discount-shop/login" class="discount-app">
 					<img class="app-wise-logo center" alt="Pagoole Discount Shop"
-						src="https://www.pagoole.com/assets/img/pagoole-discount-logo128x128.png">
+						src="https://www.pagoole.com/assets/images/pagoole-discount-logo128x128.png">
 					<div class="appname">Pagole Discount Shop</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/lams/login" class="lost-app">
-					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/pagoole-lost-logo.png">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/pagoole-lost-logo.png">
 					<div class="appname">Pagoole Lost</div>
 				</a>
 				<a href="dynamic-report-project.html" class="report-app">
@@ -76,19 +76,24 @@ if (header) {
 					<div class="appname">Pagoole Dynamic Report Project</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="index-app">
-					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/pagoole-index.jpg">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/pagoole-index.jpg">
 					<div class="appname">Index</div>
 				</a>
 			</div>
 			<hr />
-			<h6 style="text-align: center; color: #1900d5;">Others Applications</h6>
+			<h6 style="text-align: center; color: #1900d5;">About Applications</h6>
 			<div class="apps tooltip-cust">
+			<a href="pagoole-discount-shop.html" class="discount-app">
+					<img class="app-wise-logo center" alt="Pagoole Discount Shop"
+						src="https://www.pagoole.com/assets/images/pagoole-discount-logo128x128.png">
+					<div class="appname">About Pagole Discount Shop</div>
+				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/ituhin2/home" class="found-app">
 					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/shafiq_cumilla.jpg">
 					<div class="appname">LAMS : Lost And Found Asset Management System.</div>
 				</a>
 				<a href="https://oracleapex.com/ords/r/shafiqadmin/shafiq-test/home" class="test-app">
-					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/img/profile-picture.jpg">
+					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/profile-picture.jpg">
 					<div class="appname">Test Application For Oracle Apex Testing.</div>
 				</a>
 
