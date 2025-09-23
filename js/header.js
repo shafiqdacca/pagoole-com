@@ -71,7 +71,7 @@ if (header) {
 					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/pagoole-lost-logo.png">
 					<div class="appname">Pagoole Lost</div>
 				</a>
-				<a href="dynamic-report-project.html" class="report-app">
+				<a href="https://pagoole.com/dynamic-report-project.html" class="report-app">
 					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/logo-pagoole-report-project.png">
 					<div class="appname">Pagoole Dynamic Report Project</div>
 				</a>
@@ -83,7 +83,7 @@ if (header) {
 			<hr />
 			<h6 style="text-align: center; color: #1900d5;">About Applications</h6>
 			<div class="apps tooltip-cust">
-			<a href="pagoole-discount-shop.html" class="discount-app">
+			<a href="https://pagoole.com/pagoole-discount-shop.html" class="discount-app">
 					<img class="app-wise-logo center" alt="Pagoole Discount Shop"
 						src="https://www.pagoole.com/assets/images/pagoole-discount-logo128x128.png">
 					<div class="appname">About Pagole Discount Shop</div>
