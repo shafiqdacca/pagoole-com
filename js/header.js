@@ -1,8 +1,9 @@
 // Header
 const header = document.getElementById("header");
 if (header) {
-	header.innerHTML = `
+	header.outerHTML = `
   <header id="pagoole-header">
+  <div style="visibility: hidden;" id="top"></div>
 		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top">
 			<div class="w100p df jic aic">
 				<div class="col-lg-2">

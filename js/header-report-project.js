@@ -1,8 +1,8 @@
 // Header
 const header = document.getElementById("header");
 if (header) {
-  header.innerHTML = `
-  <header>
+  header.outerHTML = `
+  <header id="pagoole-header-report-project">
   <div style="visibility: hidden;" id="top"></div>
     <nav class="container">
    <a href="/">
