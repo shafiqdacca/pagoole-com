@@ -3,8 +3,8 @@ const header = document.getElementById("header");
 if (header) {
   header.outerHTML = `
   <header id="pagoole-header-report-project">
-  <div style="visibility: hidden;" id="top"></div>
-    <nav class="container">
+    <nav class="container1">
+    <div style="visibility: hidden;" id="top"></div>
    <a href="/">
 <img src="https://pagoole.com/assets/images/navbar-logo-64x64.png" 
      alt="পাগল বিডি Pagol BD"
