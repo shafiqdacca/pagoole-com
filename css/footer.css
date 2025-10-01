@@ -89,6 +89,7 @@ footer a {
 }
 
 footer {
-  background: rgb(95 196 255);
+  background: rgb(95 196 255); /* rgb(95 196 255);*/
+  font-weight: 500;
 }
 

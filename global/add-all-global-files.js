@@ -1,4 +1,5 @@
-const baseUrl = "https://pagoole.com/"; // change this to your domain
+//const baseUrl = "https://pagoole.com/"; // change this to your domain
+const baseUrl = "./"; // for relative path use "./"
 
 // List of JS files (relative paths)
 const scripts = [

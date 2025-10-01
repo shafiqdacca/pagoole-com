@@ -2,7 +2,6 @@
 const header = document.getElementById("header");
 if (header) {
 	header.outerHTML = `
-  <header id="pagoole-header">
 		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top">
 		  <div style="visibility: hidden;" id="top"></div>	
 		<div class="w100p df jic aic">
@@ -100,7 +99,6 @@ if (header) {
 
 			</div>
 		</div>
-	</header>
 `;
 }
 
