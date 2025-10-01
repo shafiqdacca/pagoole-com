@@ -5,35 +5,41 @@
     --global-common-color-green: #05c809;
     --grid-gap: 1px;
     --comapany-logo: './assets/images/no-image.svg';
+    --default-background-color: #f4f2ee;
 }
 
-table {
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth
+}
+
+.standard-table-class table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-th,
-td {
+.standard-table-class th,
+.standard-table-class td {
     border: 1px solid #dddddd;
 }
 
-th {
+.standard-table-class th {
     text-align: center;
     padding: 8px;
     background-color: #e5e5e5;
 }
 
-td {
+.standard-table-class td {
     text-align: left;
     padding: 2px 4px;
 }
 
-tr:hover {
+.standard-table-class tr:hover {
     background-color: #0dff00;
 }
 
-tr:nth-child(even) {
+.standard-table-class tr:nth-child(even) {
     background-color: #00ff0d2e;
 }
 
@@ -437,21 +443,27 @@ tr:nth-child(even) {
 .aic {
     align-items: center;
 }
+
 .ais {
     align-items: start;
 }
+
 .aie {
     align-items: end;
 }
+
 .aib {
     align-items: baseline;
 }
+
 .aibf {
     align-items: first baseline;
 }
+
 .ailb {
     align-items: last baseline;
 }
+
 .aisc {
     align-items: stretch;
 }

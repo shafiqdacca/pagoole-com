@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- HTML Meta Tags -->
-  <title>পাগল || Pagoole Lost and Found anything world wide</title>
+  <title>Dynamic Solution BD</title>
   <meta name="description"
     content="Pagoole Dynamic Report Project - পাগল - Visit www.pagoole.com for verified and trusted solutions.">
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
@@ -14,7 +14,7 @@
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://pagoole.com/dynamic-report-project.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="পাগল || Pagoole Lost and Found anything world wide">
+  <meta property="og:title" content="Dynamic Solution BD">
   <meta property="og:description"
     content="Pagoole Dynamic Report Project - পাগল - Visit www.pagoole.com for verified and trusted solutions.">
   <meta property="og:image" content="https://www.pagoole.com/assets/image/og-image-pagoole-dynamic-report-project.webp">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="pagoole.com">
   <meta property="twitter:url" content="https://pagoole.com/dynamic-report-project.html">
-  <meta name="twitter:title" content="পাগল || Pagoole Lost and Found anything world wide">
+  <meta name="twitter:title" content="Dynamic Solution BD">
   <meta name="twitter:description"
     content="Pagoole Dynamic Report Project - পাগল - Visit www.pagoole.com for verified and trusted solutions.">
   <meta name="twitter:image"
@@ -55,7 +55,7 @@
 
     body {
       margin: 0;
-      font-family: Arial, Inter, system-ui, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       background: var(--bg);
       color: var(--ink);
     }
@@ -63,7 +63,8 @@
     header.hero {
       padding: 40px 12px;
       text-align: center;
-      background: linear-gradient(90deg, #aafcb8, rgb(210, 210, 247), #03a9f4);
+      /*background: linear-gradient(90deg, #aafcb8, rgb(210, 210, 247), #03a9f4);*/
+      background: var(--default-background-color, #f4f2ee);
       background-size: cover;
       background-position: center;
       color: #0f172a
@@ -149,6 +150,11 @@
       border-radius: 12px
     }
 
+    .cta a{
+      text-decoration: none;
+      background: white;
+      color: #0004ff;
+    }
     .cta h2 {
       color: white;
       margin-bottom: 12px
@@ -167,8 +173,7 @@
   </style>
 </head>
 
-<body>
-  <div id="home"></div>
+<body id="page-top">
   <nav>
     <!-- Company Logo -->
     <div class="logo">
@@ -184,7 +189,7 @@
       <i class="fa fa-bars"></i>
     </div>
     <ul id="pagoole-menu">
-      <li><a href="#home"><i class="fa-solid fa-home" style="color: rgb(0, 255, 42);"></i> Home</a></li>
+      <li><a href="#page-top"><i class="fa-solid fa-home" style="color: rgb(0, 255, 42);"></i> Home</a></li>
       <li><a href="#overview"><i class="fa-solid fa-circle-info" style="color: blue;"></i> Overview</a></li>
       <li><a href="#benefits"><i class="fa-solid fa-circle-info" style="color: rgb(0, 247, 255);"></i> Benefits</a></li>
       <li><a href="#features"><i class="fa-solid fa-star" style="color: #e67e22;"></i> Features</a></li>
@@ -199,9 +204,7 @@
 
 
   <header class="hero">
-    <h1><!-- HTML -->
-      <span class="pagoole"></span> Dynamic Report Project
-    </h1>
+    <h1>Dynamic Report Project</h1>
     <p>A colorful, vendor‑neutral, database‑agnostic reporting solution designed and developed by <!--<a
         href="https://www.pagoole.com" target="_blank">Pagoole</a>--> <span class="pagoole"></span> using Advance <a
         href="https://www.oracle.com" target="_blank">Oracle</a> Dynamic PL/SQL, <a href="https://www.plpdf.com"

@@ -1,7 +1,8 @@
 // Header
-const header = document.getElementById("header");
-if (header) {
-	header.outerHTML = `
+const navbar = document.getElementById("navbar");
+if (navbar) {
+	navbar.outerHTML = `
+	<div id="navbar-placeholder">
 		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top">
 		  <div style="visibility: hidden;" id="top"></div>	
 		<div class="w100p df jic aic">
@@ -96,8 +97,8 @@ if (header) {
 					<img class="app-wise-logo center" src="https://www.pagoole.com/assets/images/profile-picture.jpg">
 					<div class="appname">Test Application For Oracle Apex Testing.</div>
 				</a>
-
 			</div>
+		</div>
 		</div>
 `;
 }

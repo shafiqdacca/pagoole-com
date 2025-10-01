@@ -1,6 +1,11 @@
 /* this file does not require css reference file */
 function initSearchHistory() {
     const searchBox = document.getElementById("searchBox");
+    if (!searchBox) {
+        // Element does not exist, exit
+        return;
+    }
+    searchBox.setAttribute("autocomplete", "off"); // disable browser autocomplete
     const searchSuggestions = document.getElementById("searchSuggestions");
 
     // Load history from localStorage

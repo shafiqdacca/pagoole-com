@@ -1,34 +1,25 @@
 //const baseUrl = "https://pagoole.com/"; // change this to your domain
-const baseUrl = "./"; // for relative path use "./"
+const baseUrl = "./"; // for local testing
 
-// List of JS files (relative paths)
+// JS files
 const scripts = [
     "js/scripts.js",
-    //"/js/search-suggessions.js",
     "js/pagoole.js",
     "js/loading.js",
-    //"/js/header.js",
-    "js/footer.js"
+    "js/navbar.js",
+    "js/footer.js",
+    "js/search-suggestions.js" // ✅ fixed spelling
 ];
 
-// Function to load all scripts
-function loadScripts(fileList) {
-    fileList.forEach(file => {
-        const script = document.createElement("script");
-        script.src = baseUrl + file;
-        script.defer = true; // ensures they load after parsing
-        document.head.appendChild(script);
-    });
-}
-
-// CSS files list
+// CSS files
 const cssFiles = [
     "css/global-css.css",
     "css/header-footer-report-project.css",
     "css/custom.css",
     "css/loading.css",
     "css/footer.css",
-    "css/pagoole.css"
+    "css/pagoole.css",
+    "css/styles.css"
 ];
 
 // Load CSS dynamically
@@ -41,7 +32,46 @@ function loadCSS(files) {
     });
 }
 
-// Load them
+// Load JS files one by one, in order
+function loadScriptsSequentially(files, callback) {
+    let index = 0;
+
+    function loadNext() {
+        if (index >= files.length) {
+            if (typeof callback === "function") callback();
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = baseUrl + files[index];
+        script.defer = true;
+
+        script.onload = () => {
+            index++;
+            loadNext(); // load the next one
+        };
+
+        script.onerror = () => {
+            console.error("Failed to load:", files[index]);
+            index++;
+            loadNext();
+        };
+
+        document.head.appendChild(script);
+    }
+
+    loadNext();
+}
+
+// Load everything
 loadCSS(cssFiles);
-loadScripts(scripts);
-initSearchHistory();
+
+loadScriptsSequentially(scripts, () => {
+    console.log("All scripts loaded ✅");
+
+    if (typeof initSearchHistory === "function") {
+        initSearchHistory();
+    } else {
+        console.warn("initSearchHistory is still not defined.");
+    }
+});

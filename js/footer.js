@@ -5,7 +5,7 @@ if (footer) {
   <footer class="footer">
   <div class="footer-container">
   <div>
-    <p>Copyright &copy; Pagoole &commat;2021-2025 <a href="https://www.pagoole.com">পাগল</a> || <a href="https://www.pagoole.com"><span class="pagoole"></span></a> All rights reserved.</p>
+    <p>Copyright &copy; <strong>Pagoole</strong> &commat;2021-2025 <a href="https://www.pagoole.com">পাগল</a> || <a href="https://www.pagoole.com"><span class="pagoole"></span></a> All rights reserved.</p>
     </div>
     <div class="footer-top">
       <a href="#top" title="Back to Top">

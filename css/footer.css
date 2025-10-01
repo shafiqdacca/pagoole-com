@@ -3,6 +3,7 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  background: rgb(204 219 209); /*rgb(204 219 209); / rgb(95 196 255);*/
 }
 
 footer a {
@@ -31,7 +32,7 @@ footer a {
   justify-content: center;
   width: 36px;
   height: 36px;
-  background-color: #e0e0e0;
+  background-color: #ffffff; /* #ffffff / #e0e0e0;*/
   color: #333;
   border-radius: 50%;
   font-size: 1rem;
@@ -87,9 +88,3 @@ footer a {
   flex: 0 0 100%;
   text-align: center;
 }
-
-footer {
-  background: rgb(95 196 255); /* rgb(95 196 255);*/
-  font-weight: 500;
-}
-

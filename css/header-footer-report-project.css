@@ -10,10 +10,6 @@ header {
   z-index: 9990;
 }
 
-header {
-  background: rgb(95 196 255);
-}
-
 .header-space {
   margin-top: 60px !important;
   /* Adjust this value based on the header height */
