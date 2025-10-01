@@ -2,7 +2,7 @@
 const navbar = document.getElementById("navbar");
 if (navbar) {
 	navbar.outerHTML = `
-	<div id="navbar-placeholder">
+	<header id="navbar-placeholder">
 		<nav id="mainNav" class="navbar-expand-lg navbar-dark fixed-top">
 		  <div style="visibility: hidden;" id="top"></div>	
 		<div class="w100p df jic aic">
@@ -99,7 +99,7 @@ if (navbar) {
 				</a>
 			</div>
 		</div>
-		</div>
+		</header>
 `;
 }
 

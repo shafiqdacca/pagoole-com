@@ -1,5 +1,5 @@
-//const baseUrl = "https://pagoole.com/"; // change this to your domain
-const baseUrl = "./"; // for local testing
+const baseUrl = "https://pagoole.com/"; // change this to your domain
+// const baseUrl = "./"; // for local testing
 
 // JS files
 const scripts = [
@@ -13,13 +13,14 @@ const scripts = [
 
 // CSS files
 const cssFiles = [
-    "css/global-css.css",
-    "css/header-footer-report-project.css",
-    "css/custom.css",
-    "css/loading.css",
-    "css/footer.css",
-    "css/pagoole.css",
-    "css/styles.css"
+    baseUrl + "css/global-css.css",
+    baseUrl + "css/header-footer-report-project.css",
+    baseUrl + "css/custom.css",
+    baseUrl + "css/loading.css",
+    baseUrl + "css/footer.css",
+    baseUrl + "css/pagoole.css",
+    baseUrl + "css/styles.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 ];
 
 // Load CSS dynamically
@@ -27,7 +28,7 @@ function loadCSS(files) {
     files.forEach(file => {
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = baseUrl + file;
+        link.href = file;
         document.head.appendChild(link);
     });
 }
@@ -43,12 +44,14 @@ function loadScriptsSequentially(files, callback) {
         }
 
         const script = document.createElement("script");
-        script.src = baseUrl + files[index];
         script.defer = true;
+        script.src = files[index].startsWith("http")
+            ? files[index]
+            : baseUrl + files[index];
 
         script.onload = () => {
             index++;
-            loadNext(); // load the next one
+            loadNext();
         };
 
         script.onerror = () => {
@@ -67,10 +70,12 @@ function loadScriptsSequentially(files, callback) {
 loadCSS(cssFiles);
 
 loadScriptsSequentially(scripts, () => {
-    console.log("All scripts loaded ✅");
-
     if (typeof initSearchHistory === "function") {
-        initSearchHistory();
+        try {
+            initSearchHistory();
+        } catch (err) {
+            console.error("initSearchHistory failed:", err);
+        }
     } else {
         console.warn("initSearchHistory is still not defined.");
     }
