@@ -37,7 +37,7 @@ if (navbar) {
 				</div>
 				<div class="col-lg-2 df aic jcfe gap10px">
 					<!-- Application List Button -->
-					<!-- Profile Button -->
+					<!-- Profile Button --> 
 					<button id="btnAppsList" aria-label="Applications"
 						class="btn ml12px back-color dropbtn border-radius-logo applist"
 						onclick="showApps();">
