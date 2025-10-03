@@ -6,6 +6,8 @@
     --grid-gap: 1px;
     --comapany-logo: './assets/images/no-image.svg';
     --default-background-color: #f4f2ee;
+    --default-navbar-color: #fff;
+    --default-footer-color: #f2f2f2;
 }
 
 * {
@@ -72,6 +74,79 @@
     font-size: 1rem;
     font-weight: bold;
 }
+
+.center-f,
+.centerf,
+.center-flex {
+    display: flex !important;
+    justify-content: center !important;
+    /* horizontal center */
+    align-items: center !important;
+    /* vertical center */
+    /* full viewport height */
+}
+
+/* justify-content: jc */
+
+.jcc {
+    justify-content: center;
+}
+
+.jcs {
+    justify-content: start;
+}
+
+.jce {
+    justify-content: end;
+}
+
+.jcsb {
+    justify-content: space-between;
+}
+
+.jcsa {
+    justify-content: space-around;
+}
+
+.jcse {
+    justify-content: space-evenly;
+}
+
+.jcfe {
+    justify-content: flex-end;
+}
+
+/* ./justify-content: jc */
+
+
+/* gap : gap */
+.gap5px {
+    gap: 5px;
+}
+
+.gap10px {
+    gap: 10px;
+}
+
+.gap5p {
+    gap: 5%;
+}
+
+.gap10p {
+    gap: 10%;
+}
+
+.gap15p {
+    gap: 15%;
+}
+
+.gap20p {
+    gap: 20%;
+}
+
+/*./gap : gap */
+
+
 
 .br10px {
     border-radius: 10px;
@@ -684,12 +759,33 @@
 /* ./margin-top : mt (shortcut: mt8px, mt12px, etc.) */
 
 
-/* margin-left: ml*/
-.ml12px {
-    margin-left: 12px;
-}
+/* margin-left: ml */
+.ml1px  { margin-left: 1px; }
+.ml2px  { margin-left: 2px; }
+.ml3px  { margin-left: 3px; }
+.ml4px  { margin-left: 4px; }
+.ml5px  { margin-left: 5px; }
+.ml6px  { margin-left: 6px; }
+.ml7px  { margin-left: 7px; }
+.ml8px  { margin-left: 8px; }
+.ml9px  { margin-left: 9px; }
+.ml10px { margin-left: 10px; }
+.ml11px { margin-left: 11px; }
+.ml12px { margin-left: 12px; }
+.ml13px { margin-left: 13px; }
+.ml14px { margin-left: 14px; }
+.ml15px { margin-left: 15px; }
+.ml16px { margin-left: 16px; }
+.ml17px { margin-left: 17px; }
+.ml18px { margin-left: 18px; }
+.ml19px { margin-left: 19px; }
+.ml20px { margin-left: 20px; }
+.ml21px { margin-left: 21px; }
+.ml22px { margin-left: 22px; }
+.ml23px { margin-left: 23px; }
+.ml24px { margin-left: 24px; }
+/* ./margin-left: ml */
 
-/* ./margin-left: ml*/
 
 
 /* margin-bottom: mb*/

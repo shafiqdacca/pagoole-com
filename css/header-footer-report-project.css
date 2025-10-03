@@ -22,7 +22,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  /*height: 60px;*/
 }
 
 nav .toggle {
@@ -109,7 +109,7 @@ nav .logo a {
   text-decoration: none;
   color: #ffffff;
   /* Your green color */
-  font-size: 24px;
+  font-size: 36px;
   /* Default for large screens 
   font-weight: bold;*/
 }

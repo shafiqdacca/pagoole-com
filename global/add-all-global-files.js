@@ -1,5 +1,5 @@
-const baseUrl = "https://pagoole.com/"; // change this to your domain
-// const baseUrl = "./"; // for local testing
+//const baseUrl = "https://pagoole.com/"; // change this to your domain
+ const baseUrl = "./"; // for local testing
 
 // JS files
 const scripts = [

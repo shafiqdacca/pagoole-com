@@ -12341,7 +12341,7 @@ p {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     border: none;
-    background-color: #f1f1f1;
+    /*background-color: #f1f1f1;*/
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
 

@@ -11,14 +11,7 @@ body {
     padding: 0;
 }
 
-#btnAppsList {
-    height: 48px;
-    width: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
+
 
 #apps-arrow {
     position: absolute;

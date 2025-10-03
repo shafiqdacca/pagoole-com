@@ -2,18 +2,108 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, #4facfe, #04aa1d);
-    /*height: 65px;*/
+    /*background: linear-gradient(90deg, #4facfe, #04aa1d);*/
+    background: var(--default-navbar-color, #fff);
+    max-height: 68px;
     /* Standard navbar height */
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    /*padding: 0 20px;    */
+    padding: 20px 30px;
+    position: fixed;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+    /*box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);*/
 }
+
+.pagoole-navbar.shrink {
+    padding: 3px 30px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    transition: all 0.3s ease;
+}
+
+.pagoole-navbar.shrink .logo {
+    font-size: 18px;
+}
+
+.pagoole-search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.pagoole-searchTerm {
+    border: 2px solid #10c94b;
+    border-right: none;
+    padding: 5px;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    width: 100%;
+}
+
+.pagoole-searchButton {
+    width: 40px;
+    border: 1px solid #10c94b;
+    background: #10c94b;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#btnAppsList {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Default (navbar not shrunk) */
+#myPfofile {
+  border: 3px solid #fff;
+  transition: all 0.25s ease;
+}
+
+/* When navbar has shrink */
+.pagoole-navbar.shrink #myPfofile {
+  border: none; /* or change to a different style */
+}
+
+
+#myPfofile:hover {
+    border: 3px solid #ddd;
+    opacity: 0.8;
+}
+
+/* apply when navbar has shrink */
+.pagoole-navbar.shrink #btnAppsList,
+.pagoole-navbar.shrink #myPfofile {
+  height: 40px;
+  width: 40px;
+}
+
+/* optional: slightly reduce logo size (if you have .logo inside navbar) */
+.pagoole-navbar .logo { transition: transform 0.25s ease; }
+.pagoole-navbar.shrink .logo { transform: scale(0.92); }
+
+/* When navbar shrinks → force images to resize with parent */
+.pagoole-navbar.shrink #btnAppsList img,
+.pagoole-navbar.shrink #myPfofile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* or 'cover' if you want it to fill fully */
+  border-radius: 50%;    /* optional, for round avatar */
+  display: block;
+  transition: width 0.25s ease, height 0.25s ease;
+}
+
+
 @media screen and (max-width: 768px) {
-    nav {
-        padding: 0 6px;
+    nav, .pagoole-navbar.shrink {
+        padding: 2px 6px;
     }
 }
 
@@ -21,12 +111,21 @@ nav .logo {
     display: flex;
     align-items: center;
 }
+
+nav .profile-picture img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
 nav .logo img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     margin-right: 8px;
-    background-color: #fff;/* #0dcaf0;*/
+    background-color: #fff;
+    /* #0dcaf0;*/
 }
 
 nav ul {
