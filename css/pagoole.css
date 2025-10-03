@@ -39,6 +39,15 @@ nav {
     border-radius: 25px 0 0 25px;
     outline: none;
     width: 100%;
+    box-shadow: 0px 3px 10px 0px rgba(31, 31, 31, 0.178);
+}
+
+.pagoole-searchTerm:hover {
+    box-shadow: 0px 3px 10px 0px rgba(31, 31, 31, 0.562);
+}
+
+.hover-shadow:hover {
+    box-shadow: 0px 3px 10px 0px rgba(31, 31, 31, 0.562);
 }
 
 .pagoole-searchButton {
@@ -63,13 +72,14 @@ nav {
 
 /* Default (navbar not shrunk) */
 #myPfofile {
-  border: 3px solid #fff;
-  transition: all 0.25s ease;
+    border: 3px solid #fff;
+    transition: all 0.25s ease;
 }
 
 /* When navbar has shrink */
 .pagoole-navbar.shrink #myPfofile {
-  border: none; /* or change to a different style */
+    border: none;
+    /* or change to a different style */
 }
 
 
@@ -81,28 +91,41 @@ nav {
 /* apply when navbar has shrink */
 .pagoole-navbar.shrink #btnAppsList,
 .pagoole-navbar.shrink #myPfofile {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 /* optional: slightly reduce logo size (if you have .logo inside navbar) */
-.pagoole-navbar .logo { transition: transform 0.25s ease; }
-.pagoole-navbar.shrink .logo { transform: scale(0.92); }
+.pagoole-navbar .logo {
+    transition: transform 0.25s ease;
+}
+
+.pagoole-navbar.shrink .logo {
+    transform: scale(0.92);
+}
 
 /* When navbar shrinks → force images to resize with parent */
 .pagoole-navbar.shrink #btnAppsList img,
 .pagoole-navbar.shrink #myPfofile img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* or 'cover' if you want it to fill fully */
-  border-radius: 50%;    /* optional, for round avatar */
-  display: block;
-  transition: width 0.25s ease, height 0.25s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* or 'cover' if you want it to fill fully */
+    border-radius: 50%;
+    /* optional, for round avatar */
+    display: block;
+    transition: width 0.25s ease, height 0.25s ease;
 }
 
+.pagoole-navbar.shrink .pagoole-searchTerm,
+.pagoole-navbar.shrink .pagoole-searchButton {
+    height: 30px;
+}
 
 @media screen and (max-width: 768px) {
-    nav, .pagoole-navbar.shrink {
+
+    nav,
+    .pagoole-navbar.shrink {
         padding: 2px 6px;
     }
 }
@@ -197,4 +220,79 @@ nav .toggle {
     .logo-text {
         font-size: unset;
     }
+}
+
+/* Modal overlay */
+.profile-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.profile-modal-overlay.active {
+    display: flex;
+}
+
+/* Modal content */
+.profile-modal-content {
+    background: #fff;
+    border-radius: 12px;    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.profile-modal-header {
+    padding: 30px 20px 20px;
+}
+
+.profile-modal-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.profile-modal-header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Modal footer */
+.profile-modal-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+}
+
+.profile-modal-footer button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile-modal-footer button:hover {
+    background: #3a8de0;
 }

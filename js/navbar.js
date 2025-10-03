@@ -35,11 +35,11 @@ if (navbar) {
 					</div>
 					<div id="searchSuggestions"></div>
 				</div>
-				<div class="col-lg-2 df aic jcfe gap10px">
+				<div class="col-lg-2 df aic jcfe gap4px">
 					<!-- Application List Button -->
 					<!-- Profile Button --> 
 					<button id="btnAppsList" aria-label="Applications"
-						class="btn ml12px back-color dropbtn border-radius-logo applist"
+						class="btn ml6px back-color dropbtn border-radius-logo applist"
 						onclick="showApps();">
 						<div class="bento-menu">
 							<div class="bento-dot"></div>
@@ -54,7 +54,7 @@ if (navbar) {
 						</div>
 					</button>
 					<a id="myPfofile" href="javascript:void(0);"
-						class="float-right profile-picture back-color border-radius-logo"
+						class="hover-shadow float-right profile-picture back-color border-radius-logo"
 						onclick="showProfile();">
 						<img src="https://www.pagoole.com/assets/images/pagoole.png" alt="Pagoole Logo" />							
 					</a>
@@ -106,12 +106,18 @@ if (navbar) {
 			</div>
 		</div>
 
-		<div id="myProfile" class="dropdown-content apps-margin scroll" style="display:none;">
-			<h4 style="text-align: center;">Accounts</h4>
-			<div>
-				<hr />
-				<a href="https://www.pagoole.com/login.html" class="profile-app">
-					<img class="app-wise-logo center" alt="Login"/>
+		<div id="myProfile" class="dropdown-content apps-margin br10px" style="display:none;">
+			<div class="profile-modal-overlay1 active" id="profileModal">
+			<div class="profile-modal-content">
+				<div class="profile-modal-header scroll">
+					<img src="https://www.pagoole.com/assets/images/pagoole.png" alt="User Profile">
+					<h3>John Doe</h3>
+					<p>johndoe@example.com</p>
+				</div>
+				<div class="profile-modal-footer bblr10px bbrr10px">
+					<button id="logoutBtn">Logout</button>
+				</div>
+			</div>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile Popup</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: #f0f2f5;
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 20px;
+    background: #4facfe;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar img.profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: width 0.3s, height 0.3s;
+    object-fit: cover;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  /* Modal content */
+  .modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal-header {
+    padding: 30px 20px 20px;
+  }
+
+  .modal-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .modal-header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Modal footer */
+  .modal-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: #f9f9f9;
+  }
+
+  .modal-footer button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .modal-footer button:hover {
+    background: #3a8de0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <img src="https://www.pagoole.com/assets/images/pagoole.png" alt="Profile" class="profile-pic" id="profileBtn">
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="profileModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <img src="https://www.pagoole.com/assets/images/pagoole.png" alt="User Profile">
+      <h3>John Doe</h3>
+      <p>johndoe@example.com</p>
+    </div>
+    <div class="modal-footer">
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const profileBtn = document.getElementById("profileBtn");
+  const profileModal = document.getElementById("profileModal");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  // Open modal
+  profileBtn.addEventListener("click", () => {
+    profileModal.classList.add("active");
+  });
+
+  // Close modal if clicked outside content
+  profileModal.addEventListener("click", (e) => {
+    if(e.target === profileModal){
+      profileModal.classList.remove("active");
+    }
+  });
+
+  // Logout click
+  logoutBtn.addEventListener("click", () => {
+    alert("Logging out...");
+    // redirect to logout page or handle logout logic
+  });
+</script>
+
+</body>
+</html>
