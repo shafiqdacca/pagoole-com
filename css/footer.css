@@ -3,7 +3,9 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-  background: var(--default-footer-color)/* rgb(204 219 209); / rgb(204 219 209); / rgb(95 196 255);*/
+  background: var(--default-footer-color);/* rgb(204 219 209); / rgb(204 219 209); / rgb(95 196 255);*/
+  font-size: 15px;
+  border-top: 1px solid #dbdbdb;
 }
 
 footer a {

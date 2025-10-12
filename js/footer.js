@@ -2,9 +2,8 @@
 const footer = document.getElementById("footer");
 if (footer) {
   footer.outerHTML = `
-  <footer class="footer">
-
-  <div class="language-select">
+  <footer id="footer" class="footer">
+  <div class="language-select tac">
   <a href="?lang=en">English</a> | 
   <a href="?lang=bn">বাংলা</a> | 
   <a href="?lang=fr">Français</a> | 

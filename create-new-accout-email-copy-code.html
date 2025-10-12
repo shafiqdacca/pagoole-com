@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Opening Confirmation</title>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+    .pagoole-container { margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; }
+    .pagoole-header { text-align: center; margin-bottom: 20px; }
+    .pagoole-header h1 { font-size: 24px; color: #4CAF50; }
+    .pagoole-content { margin-bottom: 20px; }
+    .pagoole-note { font-size: 14px; color: #777; }
+    .pagoole-button-container { text-align: center; }
+    .pagoole-button { padding: 10px 20px; color: #fff; background-color: #4CAF50; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .pagoole-footer { font-size: 14px; color: #555; margin-top: 20px; text-align: center; }
+
+    /* Verification code copy style */
+    .verification-code-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        background-color: #e6f7ff;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 20px 0;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .verification-code-container .fa-copy {
+        color: #333;
+        font-size: 18px;
+        transition: color 0.2s;
+    }
+    .verification-code-container .fa-copy:hover {
+        color: #4CAF50;
+    }
+
+    .copied-message {
+        font-size: 14px;
+        color: green;
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="pagoole-container">
+    <div class="pagoole-header">
+        <h1>Account Opening Confirmation</h1>
+    </div>
+    <div class="pagoole-content">
+        <p>Dear <strong>replace_user_email</strong>,</p>
+        <p>Welcome to Pagoole! Your account has been successfully created. Please use the verification code below to confirm your account and complete your registration:</p>
+        <div class="pagoole-verification-code" id="verificationCode">
+            replace_verification_code
+        </div>
+        <p class="pagoole-note">Please note: This code is valid only for 30 minutes.</p>
+		<p><strong>Request Date:</strong> replace_systimestamp</p>
+    </div>
+    <div class="pagoole-button-container">
+        <a href="replace_confirm_href" class="pagoole-button">Confirm Account</a>
+    </div>
+	<br/>
+    <hr/>
+    <div class="pagoole-footer">
+        <p>If you did not request this account, please ignore this email or contact support.</p>
+		<p>Copyright © <strong>Pagoole</strong> @2021-2025 <a href="https://www.pagoole.com">পাগল</a> || <a href="https://www.pagoole.com"><span class="pagoole" style="font-family: fangsong; display: inline-block; border-radius: 6px;"><a href="https://www.pagoole.com" style="text-decoration: none; display: inline-block;"><span style="color: rgb(234, 67, 53);">P</span><span style="color: rgb(66, 133, 244);">a</span><span style="color: rgb(0, 255, 0);">g</span><span style="color: rgb(251, 188, 5);">o</span><span style="color: rgb(0, 255, 0);">o</span><span style="color: rgb(66, 133, 244);">l</span><span style="color: rgb(234, 67, 53);">e</span></a></span></a> All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    const originalDiv = document.getElementById("verificationCode");
+
+    // Create container for code + copy icon
+    const container = document.createElement("div");
+    container.className = "verification-code-container";
+
+    const codeSpan = document.createElement("span");
+    codeSpan.textContent = originalDiv.textContent.trim();
+
+    // Font Awesome copy icon
+    const copyIcon = document.createElement("i");
+    copyIcon.className = "fa fa-copy";
+    copyIcon.title = "Copy code";
+	copyIcon.style.color = "blue";
+
+    // Copied message
+    const copiedMsg = document.createElement("span");
+    copiedMsg.className = "copied-message";
+    copiedMsg.textContent = "Copied!";
+
+    // Append elements
+    container.appendChild(codeSpan);
+    container.appendChild(copyIcon);
+    container.appendChild(copiedMsg);
+
+    // Replace original div
+    originalDiv.replaceWith(container);
+
+    // Copy functionality
+    copyIcon.addEventListener("click", () => {
+        navigator.clipboard.writeText(codeSpan.textContent)
+        .then(() => {
+            copiedMsg.style.display = "inline";
+            setTimeout(() => copiedMsg.style.display = "none", 1500);
+        })
+        .catch(err => console.error("Failed to copy: ", err));
+    });
+</script>
+</body>
+</html>
