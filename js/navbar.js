@@ -65,6 +65,7 @@ if (navbar) {
 
 		<!-- Application List -->
 		<div id="allApps" class="dropdown-content apps-margin scroll">
+			<div class="bcffffff ml8px mt8px mb8px mh100p br10px">
 			<!-- <div id="apps-arrow"></div>-->
 			<h4 style="text-align: center;">My Applications</h4>
 				<hr />
@@ -104,15 +105,18 @@ if (navbar) {
 					<div class="appname">Test Application For Oracle Apex Testing.</div>
 				</a>
 			</div>
+			</div>
 		</div>
 
 		<div id="myProfile" class="dropdown-content apps-margin br10px" style="display:none;">
 			<div class="profile-modal-overlay1 active" id="profileModal">
 			<div class="profile-modal-content">
-				<div class="profile-modal-header scroll">
-					<img src="https://www.pagoole.com/assets/images/pagoole.png" alt="User Profile">
-					<h3>John Doe</h3>
-					<p>johndoe@example.com</p>
+				<div class="scroll">
+					<div class="profile-modal-header">
+						<img src="https://www.pagoole.com/assets/images/pagoole.png" alt="User Profile">
+						<h3>John Doe</h3>
+						<p>johndoe@example.com</p>
+					</div>
 				</div>
 				<div class="profile-modal-footer bblr10px bbrr10px">
 					<button id="logoutBtn">Logout</button>

@@ -12868,7 +12868,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .dropdown-content {
   display: none;
   position: fixed;
-  background-color: #ffffff;
+  background-color: #e1f3f0;
   /*overflow: fixed;*/
   box-shadow: 0px 8px 16px 0px rgb(0 0 0);
   z-index: 9999;
@@ -12900,7 +12900,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   /* background-color: #f49999; */
   /* width: 100px; */
   /* height: 300px; */
-  margin: 12px 6px 12px 12px;
+  /*margin: 12px 6px 12px 12px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12960,7 +12960,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   font-family: 'Roboto Slab';
   /*white-space: nowrap;*/
   /*overflow: hidden;*/
@@ -12973,6 +12972,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   white-space: normal;
   width: inherit;
   position: relative;
+  max-width: fit-content;
 }
 
 .dropdown-content a:hover {
