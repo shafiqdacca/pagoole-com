@@ -65,7 +65,7 @@ if (navbar) {
 
 		<!-- Application List -->
 		<div id="allApps" class="dropdown-content apps-margin scroll">
-			<div class="bcffffff ml8px mt8px mb8px mh100p br10px">
+			<div class="bcffffff ml8px mh100p br10px">
 			<!-- <div id="apps-arrow"></div>-->
 			<h4 style="text-align: center;">My Applications</h4>
 				<hr />
