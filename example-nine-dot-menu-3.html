@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with 9 Dot Menu (Round Background)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fa;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1a73e8;
+    }
+
+    /* 9-dot menu wrapper with round background */
+    .menu-wrapper {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .menu-wrapper:hover {
+      background: rgba(26,115,232,0.1);
+    }
+
+    /* 9-dot SVG icon */
+    .menu-icon {
+      width: 24px;
+      height: 24px;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+
+    .menu-wrapper:hover .menu-icon {
+      color: #1a73e8;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: absolute;
+      top: 55px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      display: none;
+      padding: 10px;
+      width: 160px;
+    }
+
+    .dropdown.active {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .dropdown a:hover {
+      background: #f1f3f4;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Pagoole</div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- 9-dot menu with round background -->
+    <div class="menu-wrapper" id="appMenuBtn">
+      <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="5" cy="5" r="2"/>
+        <circle cx="12" cy="5" r="2"/>
+        <circle cx="19" cy="5" r="2"/>
+        <circle cx="5" cy="12" r="2"/>
+        <circle cx="12" cy="12" r="2"/>
+        <circle cx="19" cy="12" r="2"/>
+        <circle cx="5" cy="19" r="2"/>
+        <circle cx="12" cy="19" r="2"/>
+        <circle cx="19" cy="19" r="2"/>
+      </svg>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="dropdown" id="appMenu">
+      <a href="#">App 1</a>
+      <a href="#">App 2</a>
+      <a href="#">App 3</a>
+    </div>
+  </nav>
+
+  <script>
+    const appBtn = document.getElementById('appMenuBtn');
+    const appMenu = document.getElementById('appMenu');
+
+    appBtn.addEventListener('click', () => {
+      appMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!appMenu.contains(e.target) && !appBtn.contains(e.target)) {
+        appMenu.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
